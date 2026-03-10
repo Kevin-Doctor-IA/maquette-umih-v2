@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1440">
+    <title>Suivi des adhésions — UMIH Pays Basque</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<div class="app-layout">
+    <aside class="sidebar">
+        <div class="sidebar-header"><span class="sidebar-logo">🔷</span><span class="sidebar-app-name">UMIH Pays Basque</span><span class="sidebar-chevron">▾</span></div>
+        <nav class="sidebar-nav">
+            <div class="sidebar-section">
+                <div class="sidebar-section-header"><span class="sidebar-section-icon">📊</span><span>Pilotage</span></div>
+                <a href="../pilotage/tableau-de-bord.html" class="sidebar-item">Tableau de bord</a>
+            </div>
+            <div class="sidebar-section">
+                <div class="sidebar-section-header"><span class="sidebar-section-icon">🏢</span><span>Adhérents</span></div>
+                <a href="liste-membres.html" class="sidebar-item">Liste des membres</a>
+                <a href="liste-prospects.html" class="sidebar-item">Liste des prospects</a>
+                <a href="suivi-prospects.html" class="sidebar-item">Suivi des prospects</a>
+                <a href="contacts.html" class="sidebar-item">Liste des contacts</a>
+                <a href="suivi-adhesions.html" class="sidebar-item active">Suivi des adhésions</a>
+                <a href="rgpd.html" class="sidebar-item">RGPD</a>
+            </div>
+            <div class="sidebar-section">
+                <div class="sidebar-section-header"><span class="sidebar-section-icon">🤝</span><span>Partenaires</span></div>
+                <a href="../partenaires/liste-partenaires.html" class="sidebar-item">Liste des partenaires</a>
+                <a href="../partenaires/suivi-partenariats.html" class="sidebar-item">Suivi des partenariats</a>
+                <a href="../partenaires/suivi-prospects-partenaires.html" class="sidebar-item">Suivi prospects partenaires</a>
+                <a href="../partenaires/echeances-proches.html" class="sidebar-item">Échéances proches</a>
+            </div>
+            <div class="sidebar-section">
+                <div class="sidebar-section-header"><span class="sidebar-section-icon">⚙️</span><span>Opérations</span></div>
+                <a href="../operations/todo-commercial.html" class="sidebar-item">TODO Commercial</a>
+                <a href="../operations/todo-partenaire.html" class="sidebar-item">TODO Partenaire</a>
+                <a href="../operations/todo-admin.html" class="sidebar-item">TODO Admin</a>
+                <a href="../operations/logs.html" class="sidebar-item">Suivi des logs</a>
+            </div>
+        </nav>
+        <div class="sidebar-footer"><span>👤</span><span>Partager</span></div>
+    </aside>
+
+    <main class="main-area">
+        <div class="disclaimer-banner">Interfaces à usage visuel uniquement — Aperçu non fonctionnel, données fictives</div>
+        <header class="page-header">
+            <div class="header-left">
+                <span class="breadcrumb">
+                    <a href="#" class="breadcrumb-parent">Adhérents</a>
+                    <span class="breadcrumb-sep">›</span>
+                    <span class="breadcrumb-current">Suivi des adhésions</span>
+                </span>
+            </div>
+            <div class="header-right">
+                <button class="header-btn">Filtre</button>
+                <button class="header-btn">Trier</button>
+                <button class="header-btn-icon">🔍</button>
+                <button class="header-btn">↓ Export</button>
+                <button class="btn-primary">➕ Créer une adhésion</button>
+            </div>
+        </header>
+
+        <div class="content-area content-white">
+            <div class="list-tabs">
+                <button class="list-tab active">Année en cours (187)</button>
+                <button class="list-tab">Année précédente (174)</button>
+                <button class="list-tab">Historique</button>
+            </div>
+            <div class="list-table-wrapper">
+                <table class="list-table">
+                    <thead>
+                        <tr>
+                            <th class="col-checkbox"><input type="checkbox" disabled></th>
+                            <th></th>
+                            <th>Membre</th>
+                            <th class="col-number">Année</th>
+                            <th class="col-number">Montant</th>
+                            <th>Modalité</th>
+                            <th class="col-number">Montant total payé</th>
+                            <th class="col-number">Montant restant</th>
+                            <th>Statut</th>
+                            <th>Date de paiement</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="list-row" data-record-name="ADH - Hôtel du Palais - 2026" onclick="openRecord(this)">
+                            <td class="col-checkbox"><input type="checkbox" disabled onclick="event.stopPropagation()"></td>
+                            <td>🟢</td>
+                            <td class="col-primary">Hôtel du Palais</td>
+                            <td class="col-number">2026</td>
+                            <td class="col-number">230 €</td>
+                            <td>Virement</td>
+                            <td class="col-number">230 €</td>
+                            <td class="col-number">0 €</td>
+                            <td><span class="badge badge-green">✅ Payée</span></td>
+                            <td>15/01/2026</td>
+                        </tr>
+                        <tr class="list-row" data-record-name="ADH - Hôtel Villa Belza - 2026" onclick="openRecord(this)">
+                            <td class="col-checkbox"><input type="checkbox" disabled onclick="event.stopPropagation()"></td>
+                            <td>🟢</td>
+                            <td class="col-primary">Hôtel Villa Belza</td>
+                            <td class="col-number">2026</td>
+                            <td class="col-number">230 €</td>
+                            <td>Carte</td>
+                            <td class="col-number">230 €</td>
+                            <td class="col-number">0 €</td>
+                            <td><span class="badge badge-green">✅ Payée</span></td>
+                            <td>20/01/2026</td>
+                        </tr>
+                        <tr class="list-row" data-record-name="ADH - Le Trinquet - 2026" onclick="openRecord(this)">
+                            <td class="col-checkbox"><input type="checkbox" disabled onclick="event.stopPropagation()"></td>
+                            <td>🟢</td>
+                            <td class="col-primary">Le Trinquet</td>
+                            <td class="col-number">2026</td>
+                            <td class="col-number">230 €</td>
+                            <td>Chèque</td>
+                            <td class="col-number">230 €</td>
+                            <td class="col-number">0 €</td>
+                            <td><span class="badge badge-green">✅ Payée</span></td>
+                            <td>12/02/2026</td>
+                        </tr>
+                        <tr class="list-row" data-record-name="ADH - Restaurant Txindoki - 2026" onclick="openRecord(this)">
+                            <td class="col-checkbox"><input type="checkbox" disabled onclick="event.stopPropagation()"></td>
+                            <td>🟠</td>
+                            <td class="col-primary">Restaurant Txindoki</td>
+                            <td class="col-number">2026</td>
+                            <td class="col-number">230 €</td>
+                            <td>Chèque</td>
+                            <td class="col-number">115 €</td>
+                            <td class="col-number">115 €</td>
+                            <td><span class="badge badge-orange">🟠 Partiel</span></td>
+                            <td>20/01/2026</td>
+                        </tr>
+                        <tr class="list-row" data-record-name="ADH - Brasserie du Port - 2026" onclick="openRecord(this)">
+                            <td class="col-checkbox"><input type="checkbox" disabled onclick="event.stopPropagation()"></td>
+                            <td>🔴</td>
+                            <td class="col-primary">Brasserie du Port</td>
+                            <td class="col-number">2026</td>
+                            <td class="col-number">230 €</td>
+                            <td>—</td>
+                            <td class="col-number">0 €</td>
+                            <td class="col-number">230 €</td>
+                            <td><span class="badge badge-red">❌ À payer</span></td>
+                            <td>—</td>
+                        </tr>
+                        <tr class="list-row" data-record-name="ADH - Bar Txoko - 2026" onclick="openRecord(this)">
+                            <td class="col-checkbox"><input type="checkbox" disabled onclick="event.stopPropagation()"></td>
+                            <td>🟢</td>
+                            <td class="col-primary">Bar Txoko</td>
+                            <td class="col-number">2026</td>
+                            <td class="col-number">230 €</td>
+                            <td>Virement</td>
+                            <td class="col-number">230 €</td>
+                            <td class="col-number">0 €</td>
+                            <td><span class="badge badge-green">✅ Payée</span></td>
+                            <td>18/01/2026</td>
+                        </tr>
+                        <tr class="list-row" data-record-name="ADH - Cabinet Comptable Harriet - 2026" onclick="openRecord(this)">
+                            <td class="col-checkbox"><input type="checkbox" disabled onclick="event.stopPropagation()"></td>
+                            <td>🟢</td>
+                            <td class="col-primary">Cabinet Comptable Harriet</td>
+                            <td class="col-number">2026</td>
+                            <td class="col-number">270 €</td>
+                            <td>Carte</td>
+                            <td class="col-number">270 €</td>
+                            <td class="col-number">0 €</td>
+                            <td><span class="badge badge-green">✅ Payée</span></td>
+                            <td>10/01/2026</td>
+                        </tr>
+                        <tr class="list-row" data-record-name="ADH - Chez Pantxika - 2026" onclick="openRecord(this)">
+                            <td class="col-checkbox"><input type="checkbox" disabled onclick="event.stopPropagation()"></td>
+                            <td>🔴</td>
+                            <td class="col-primary">Chez Pantxika</td>
+                            <td class="col-number">2026</td>
+                            <td class="col-number">230 €</td>
+                            <td>—</td>
+                            <td class="col-number">0 €</td>
+                            <td class="col-number">230 €</td>
+                            <td><span class="badge badge-red">❌ À payer</span></td>
+                            <td>—</td>
+                        </tr>
+                        <tr class="list-row" data-record-name="ADH - L'Auberge du Labourd - 2026" onclick="openRecord(this)">
+                            <td class="col-checkbox"><input type="checkbox" disabled onclick="event.stopPropagation()"></td>
+                            <td>🟢</td>
+                            <td class="col-primary">L'Auberge du Labourd</td>
+                            <td class="col-number">2026</td>
+                            <td class="col-number">230 €</td>
+                            <td>Chèque</td>
+                            <td class="col-number">230 €</td>
+                            <td class="col-number">0 €</td>
+                            <td><span class="badge badge-green">✅ Payée</span></td>
+                            <td>28/01/2026</td>
+                        </tr>
+                        <tr class="list-row" data-record-name="ADH - Restaurant Achury - 2026" onclick="openRecord(this)">
+                            <td class="col-checkbox"><input type="checkbox" disabled onclick="event.stopPropagation()"></td>
+                            <td>🔴</td>
+                            <td class="col-primary">Restaurant Achury</td>
+                            <td class="col-number">2026</td>
+                            <td class="col-number">230 €</td>
+                            <td>—</td>
+                            <td class="col-number">0 €</td>
+                            <td class="col-number">230 €</td>
+                            <td><span class="badge badge-red">❌ À payer</span></td>
+                            <td>—</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="list-footer">
+                <span class="list-count">187 enregistrements</span>
+                <div class="list-footer-totals">
+                    <div class="list-footer-total">
+                        <span class="list-footer-total-label">Total Montant :</span>
+                        <span class="list-footer-total-value">43 010 €</span>
+                    </div>
+                    <div class="list-footer-total">
+                        <span class="list-footer-total-label">Total Montant total payé :</span>
+                        <span class="list-footer-total-value">31 280 €</span>
+                    </div>
+                    <div class="list-footer-total">
+                        <span class="list-footer-total-label">Total Montant restant :</span>
+                        <span class="list-footer-total-value">11 730 €</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+<!-- FICHE LATERALE -->
+<div class="detail-panel" id="detail-panel">
+    <div class="detail-panel-header">
+        <h3 class="detail-panel-title" id="detail-panel-title">ADH - Hôtel du Palais - 2026</h3>
+        <div class="detail-panel-actions">
+            <button class="detail-panel-expand">⤢</button>
+            <button class="detail-panel-close" onclick="closeDetailPanel()">✕</button>
+        </div>
+    </div>
+    <div class="detail-panel-body">
+        <div class="detail-section">
+            <h4 class="detail-section-title">Informations générales</h4>
+            <div class="detail-field"><div class="detail-field-label">Membre lié</div><div class="detail-field-value"><span class="detail-linked-record" onclick="openSubPanel('membre','Hôtel du Palais')">Hôtel du Palais</span></div></div>
+            <div class="detail-field"><div class="detail-field-label">Année d'application</div><div class="detail-field-value"><div class="field-text" onclick="editText(this)"><span class="field-text-display">2026</span><input class="field-text-input" type="number" value="2026" style="display:none" onblur="saveText(this)" onkeydown="if(event.key==='Enter') this.blur()"></div></div></div>
+        </div>
+        <div class="detail-section">
+            <h4 class="detail-section-title">Paiement</h4>
+            <div class="detail-field"><div class="detail-field-label">Montant</div><div class="detail-field-value"><div class="field-text" onclick="editText(this)"><span class="field-text-display">230 €</span><input class="field-text-input" type="number" value="230" style="display:none" onblur="saveText(this)" onkeydown="if(event.key==='Enter') this.blur()"></div></div></div>
+            <div class="detail-field"><div class="detail-field-label">Modalité de paiement</div>
+                <div class="detail-field-value">
+                    <div class="field-select" data-field="modalite">
+                        <div class="field-select-value" onclick="toggleSelect(this)">
+                            <span class="badge badge-blue" id="val-modalite">Virement</span>
+                            <span class="field-select-arrow">▾</span>
+                        </div>
+                        <div class="field-select-dropdown" id="dropdown-modalite">
+                            <div class="field-select-option" data-badge-class="badge-blue" onclick="selectOption(this,'modalite')">Carte</div>
+                            <div class="field-select-option selected" data-badge-class="badge-blue" onclick="selectOption(this,'modalite')">Virement</div>
+                            <div class="field-select-option" data-badge-class="badge-blue" onclick="selectOption(this,'modalite')">Chèque</div>
+                            <div class="field-select-option" data-badge-class="badge-blue" onclick="selectOption(this,'modalite')">Espèces</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="detail-field"><div class="detail-field-label">Montant payé 1</div><div class="detail-field-value"><div class="field-text" onclick="editText(this)"><span class="field-text-display">230 €</span><input class="field-text-input" type="number" value="230" style="display:none" onblur="saveText(this)" onkeydown="if(event.key==='Enter') this.blur()"></div></div></div>
+            <div class="detail-field"><div class="detail-field-label">Date de paiement 1</div><div class="detail-field-value"><div class="field-text" onclick="editText(this)"><span class="field-text-display">15/01/2026</span><input class="field-text-input" type="date" value="2026-01-15" style="display:none" onblur="saveText(this)"></div></div></div>
+            <div class="detail-field"><div class="detail-field-label">Montant payé 2</div><div class="detail-field-value"><div class="field-text" onclick="editText(this)"><span class="field-text-display">—</span><input class="field-text-input" type="number" value="" style="display:none" onblur="saveText(this)" onkeydown="if(event.key==='Enter') this.blur()"></div></div></div>
+            <div class="detail-field"><div class="detail-field-label">Date de paiement 2</div><div class="detail-field-value"><div class="field-text" onclick="editText(this)"><span class="field-text-display">—</span><input class="field-text-input" type="date" value="" style="display:none" onblur="saveText(this)"></div></div></div>
+            <div class="detail-field"><div class="detail-field-label">Montant payé 3</div><div class="detail-field-value"><div class="field-text" onclick="editText(this)"><span class="field-text-display">—</span><input class="field-text-input" type="number" value="" style="display:none" onblur="saveText(this)" onkeydown="if(event.key==='Enter') this.blur()"></div></div></div>
+            <div class="detail-field"><div class="detail-field-label">Date de paiement 3</div><div class="detail-field-value"><div class="field-text" onclick="editText(this)"><span class="field-text-display">—</span><input class="field-text-input" type="date" value="" style="display:none" onblur="saveText(this)"></div></div></div>
+            <div class="detail-field"><div class="detail-field-label">Montant payé 4</div><div class="detail-field-value"><div class="field-text" onclick="editText(this)"><span class="field-text-display">—</span><input class="field-text-input" type="number" value="" style="display:none" onblur="saveText(this)" onkeydown="if(event.key==='Enter') this.blur()"></div></div></div>
+            <div class="detail-field"><div class="detail-field-label">Date de paiement 4</div><div class="detail-field-value"><div class="field-text" onclick="editText(this)"><span class="field-text-display">—</span><input class="field-text-input" type="date" value="" style="display:none" onblur="saveText(this)"></div></div></div>
+            <div class="detail-field"><div class="detail-field-label">Montant total payé (calculé)</div><div class="detail-field-value"><span style="color:#555; font-weight:600;">230 €</span></div></div>
+            <div class="detail-field"><div class="detail-field-label">Montant restant (calculé)</div><div class="detail-field-value"><span style="color:#555; font-weight:600;">0 €</span></div></div>
+            <div class="detail-field"><div class="detail-field-label">Statut (calculé)</div><div class="detail-field-value"><span class="badge badge-green">✅ Payée</span></div></div>
+            <div class="detail-field"><div class="detail-field-label">Indicateur couleur</div><div class="detail-field-value">🟢</div></div>
+        </div>
+        <div class="detail-section">
+            <h4 class="detail-section-title">Suivi relances</h4>
+            <div class="detail-field"><div class="detail-field-label">Date dernière relance</div><div class="detail-field-value" style="color:#999;">— (aucune relance)</div></div>
+            <div class="detail-field"><div class="detail-field-label">Email membre (lookup)</div><div class="detail-field-value"><a href="#" class="col-email">contact@hoteldupalais.fr</a></div></div>
+        </div>
+        <div class="detail-section">
+            <h4 class="detail-section-title">Notes</h4>
+            <div class="detail-field"><div class="detail-field-label">Notes et commentaires</div>
+                <div class="detail-field-value"><div class="field-textarea" onclick="editTextarea(this)"><div class="field-textarea-display">Paiement reçu par chèque le 15/01/2026.</div><textarea class="field-textarea-input" style="display:none" onblur="saveTextarea(this)" rows="3">Paiement reçu par chèque le 15/01/2026.</textarea></div></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SOUS-PANNEAU — Fiche élément lié -->
+<div class="sub-panel" id="sub-panel">
+    <div class="detail-panel-header">
+        <h3 class="detail-panel-title" id="sub-panel-title">—</h3>
+        <div class="detail-panel-actions">
+            <button class="detail-panel-close" onclick="closeSubPanel()">✕</button>
+        </div>
+    </div>
+    <div class="detail-panel-body" id="sub-panel-body"></div>
+</div>
+
+<script>
+function openRecord(el) { const name = el.getAttribute('data-record-name') || '—'; document.getElementById('detail-panel-title').textContent = name; document.getElementById('detail-panel').classList.add('open'); closeSubPanel(); }
+function closeDetailPanel() { document.getElementById('detail-panel').classList.remove('open'); closeSubPanel(); }
+document.addEventListener('keydown', e => { if (e.key === 'Escape') { var sp = document.getElementById('sub-panel'); if (sp && sp.classList.contains('open')) { closeSubPanel(); } else { closeDetailPanel(); } } });
+document.querySelectorAll('.list-tab').forEach(tab => { tab.addEventListener('click', function() { document.querySelectorAll('.list-tab').forEach(t => t.classList.remove('active')); this.classList.add('active'); }); });
+function toggleSelect(trigger) { const dropdown = trigger.nextElementSibling; const isOpen = dropdown.classList.contains('open'); document.querySelectorAll('.field-select-dropdown.open').forEach(d => d.classList.remove('open')); if (!isOpen) { dropdown.classList.add('open'); } }
+function selectOption(option, fieldName) { const text = option.textContent.trim(); const badgeClass = option.getAttribute('data-badge-class') || 'badge-gray'; const valueEl = document.getElementById('val-' + fieldName); if (valueEl) { valueEl.textContent = text; valueEl.className = 'badge ' + badgeClass; } option.closest('.field-select-dropdown').classList.remove('open'); }
+function editText(wrapper) { const display = wrapper.querySelector('.field-text-display'); const input = wrapper.querySelector('.field-text-input'); if (!input) return; display.style.display = 'none'; input.style.display = 'block'; input.focus(); wrapper.style.borderColor = '#166ee1'; }
+function saveText(input) { const wrapper = input.closest('.field-text'); const display = wrapper.querySelector('.field-text-display'); display.textContent = input.value || '—'; display.style.display = 'block'; input.style.display = 'none'; wrapper.style.borderColor = 'transparent'; }
+document.addEventListener('click', function(e) { if (!e.target.closest('.field-select')) { document.querySelectorAll('.field-select-dropdown.open').forEach(d => d.classList.remove('open')); } });
+function editTextarea(wrapper) { const display = wrapper.querySelector('.field-textarea-display'); const input = wrapper.querySelector('.field-textarea-input'); if (!input) return; display.style.display = 'none'; input.style.display = 'block'; input.focus(); }
+function saveTextarea(input) { const wrapper = input.closest('.field-textarea'); const display = wrapper.querySelector('.field-textarea-display'); display.textContent = input.value || '—'; display.style.display = 'block'; input.style.display = 'none'; }
+
+// ── Sous-panneau latéral ──
+const subPanelData = {
+    membre: {
+        'Hôtel du Palais': {
+            nom: 'Hôtel du Palais',
+            type: 'Adhérent', typeClass: 'badge-green',
+            activite: 'Hôtel restaurant', activiteClass: 'badge-cyan',
+            provenance: 'Déjà dans la base', provenanceClass: 'badge-blue',
+            comptable: false,
+            siret: '30 247 189 200 019', naf: '5510Z',
+            convention: 'IDCC 1979 — HCR (Hôtels, Cafés, Restaurants)',
+            adresse: '1 Avenue de l\'Impératrice', cp: '64200', ville: 'Biarritz',
+            zoneGeo: 'Biarritz', zoneGeoClass: 'badge-teal',
+            email: 'contact@hoteldupalais.fr', telephone: '05 59 41 64 00',
+            site: 'www.hoteldupalais.fr',
+            permisExploitation: true, datePermisExploitation: '15/04/2022', refPermisExploitation: 'Jean-Pierre Martin',
+            formationHygiene: true, dateFormationHygiene: '08/10/2023', refHygiene: 'Sophie Dupont',
+            permisFormer: false, datePermisFormer: '—', refPermisFormer: '',
+            nbSalaries: '48',
+            statutChef: 'Régime général de la SECU', statutChefClass: 'badge-blue',
+            statutConjoint: 'Non applicable', statutConjointClass: 'badge-gray',
+            rgpd: [true, true, true, true, true],
+            dateAdhesion: '12/03/2018',
+            notes: 'Membre fidèle depuis 2018. Établissement 5 étoiles, très impliqué dans les actions de la filière.',
+            adhesions: [
+                { titre: 'ADH - Hôtel du Palais - 2026', montant: '230 €', paye: '230 €', statut: '✅ Payée', statutClass: 'badge-green' },
+                { titre: 'ADH - Hôtel du Palais - 2025', montant: '220 €', paye: '220 €', statut: '✅ Payée', statutClass: 'badge-green' },
+                { titre: 'ADH - Hôtel du Palais - 2024', montant: '210 €', paye: '210 €', statut: '✅ Payée', statutClass: 'badge-green' }
+            ],
+            contacts: ['Jean-Pierre Martin', 'Sophie Dupont'],
+            nbAdhesions: '8'
+        },
+        'Hôtel Villa Belza': {
+            nom: 'Hôtel Villa Belza',
+            type: 'Adhérent', typeClass: 'badge-green',
+            activite: 'Hôtel', activiteClass: 'badge-cyan',
+            provenance: 'Déjà dans la base', provenanceClass: 'badge-blue',
+            comptable: false,
+            siret: '85 678 901 200 056', naf: '5510Z',
+            convention: 'IDCC 1979 — HCR',
+            adresse: '25 Côte des Basques', cp: '64200', ville: 'Biarritz',
+            zoneGeo: 'Biarritz', zoneGeoClass: 'badge-teal',
+            email: 'info@villabelza.com', telephone: '05 59 24 07 40',
+            site: 'www.villabelza.com',
+            permisExploitation: true, datePermisExploitation: '05/01/2016', refPermisExploitation: 'Txomin Urrutia',
+            formationHygiene: true, dateFormationHygiene: '20/05/2018', refHygiene: 'Txomin Urrutia',
+            permisFormer: false, datePermisFormer: '—', refPermisFormer: '',
+            nbSalaries: '22',
+            statutChef: 'Régime général de la SECU', statutChefClass: 'badge-blue',
+            statutConjoint: 'Non applicable', statutConjointClass: 'badge-gray',
+            rgpd: [true, true, true, true, true],
+            dateAdhesion: '11/01/2016',
+            notes: 'Hôtel emblématique sur la Côte des Basques.',
+            adhesions: [
+                { titre: 'ADH - Hôtel Villa Belza - 2026', montant: '230 €', paye: '230 €', statut: '✅ Payée', statutClass: 'badge-green' }
+            ],
+            contacts: ['Txomin Urrutia', 'Nathalie Bidart'],
+            nbAdhesions: '10'
+        },
+        'Le Trinquet': {
+            nom: 'Le Trinquet',
+            type: 'Adhérent', typeClass: 'badge-green',
+            activite: 'Bar restaurant', activiteClass: 'badge-blue',
+            provenance: 'Déjà dans la base', provenanceClass: 'badge-blue',
+            comptable: false,
+            siret: '17 890 123 400 078', naf: '5630Z',
+            convention: 'IDCC 1979 — HCR',
+            adresse: '10 Rue des Sports', cp: '64600', ville: 'Anglet',
+            zoneGeo: 'Anglet', zoneGeoClass: 'badge-blue',
+            email: 'letrinquet.anglet@gmail.com', telephone: '05 59 03 55 78',
+            site: '',
+            permisExploitation: true, datePermisExploitation: '14/11/2019', refPermisExploitation: 'Céline Maumus',
+            formationHygiene: true, dateFormationHygiene: '22/04/2021', refHygiene: 'Céline Maumus',
+            permisFormer: false, datePermisFormer: '—', refPermisFormer: '',
+            nbSalaries: '9',
+            statutChef: 'Régime général de la SECU', statutChefClass: 'badge-blue',
+            statutConjoint: 'Non applicable', statutConjointClass: 'badge-gray',
+            rgpd: [true, true, true, true, true],
+            dateAdhesion: '14/11/2019',
+            notes: 'Bar restaurant proche du trinquet d\'Anglet.',
+            adhesions: [
+                { titre: 'ADH - Le Trinquet - 2026', montant: '230 €', paye: '230 €', statut: '✅ Payée', statutClass: 'badge-green' }
+            ],
+            contacts: ['Céline Maumus'],
+            nbAdhesions: '6'
+        },
+        'Restaurant Txindoki': {
+            nom: 'Restaurant Txindoki',
+            type: 'Adhérent', typeClass: 'badge-green',
+            activite: 'Restaurant', activiteClass: 'badge-orange',
+            provenance: 'Déjà dans la base', provenanceClass: 'badge-blue',
+            comptable: false,
+            siret: '52 345 678 900 023', naf: '5610A',
+            convention: 'IDCC 1979 — HCR',
+            adresse: '8 Rue Gambetta', cp: '64500', ville: 'Saint Jean de Luz',
+            zoneGeo: 'Saint Jean de Luz', zoneGeoClass: 'badge-blue',
+            email: 'txindoki@wanadoo.fr', telephone: '05 59 26 44 12',
+            site: '',
+            permisExploitation: true, datePermisExploitation: '20/06/2019', refPermisExploitation: 'Amaia Larrea',
+            formationHygiene: true, dateFormationHygiene: '15/11/2020', refHygiene: 'Amaia Larrea',
+            permisFormer: false, datePermisFormer: '—', refPermisFormer: '',
+            nbSalaries: '12',
+            statutChef: 'Régime général de la SECU', statutChefClass: 'badge-blue',
+            statutConjoint: 'Conjoint collaborateur', statutConjointClass: 'badge-blue',
+            rgpd: [true, true, false, true, false],
+            dateAdhesion: '15/02/2019',
+            notes: 'Restaurant traditionnel basque.',
+            adhesions: [
+                { titre: 'ADH - Restaurant Txindoki - 2026', montant: '230 €', paye: '0 €', statut: '❌ À payer', statutClass: 'badge-red' }
+            ],
+            contacts: ['Amaia Larrea'],
+            nbAdhesions: '7'
+        },
+        'Brasserie du Port': {
+            nom: 'Brasserie du Port',
+            type: 'Adhérent', typeClass: 'badge-green',
+            activite: 'Brasserie', activiteClass: 'badge-purple',
+            provenance: 'Déjà dans la base', provenanceClass: 'badge-blue',
+            comptable: false,
+            siret: '63 456 789 000 034', naf: '5610A',
+            convention: 'IDCC 1979 — HCR',
+            adresse: '22 Quai Galuperie', cp: '64100', ville: 'Bayonne',
+            zoneGeo: 'Bayonne', zoneGeoClass: 'badge-blue',
+            email: 'brasserieduport@gmail.com', telephone: '05 59 59 12 34',
+            site: '',
+            permisExploitation: true, datePermisExploitation: '12/03/2017', refPermisExploitation: 'Pierre Daguerre',
+            formationHygiene: false, dateFormationHygiene: '—', refHygiene: '',
+            permisFormer: true, datePermisFormer: '25/09/2021', refPermisFormer: 'Pierre Daguerre',
+            nbSalaries: '18',
+            statutChef: 'Régime de la SECU des indépendants (Ex RSI)', statutChefClass: 'badge-orange',
+            statutConjoint: 'Non applicable', statutConjointClass: 'badge-gray',
+            rgpd: [false, false, false, false, false],
+            dateAdhesion: '19/09/2017',
+            notes: 'Grande brasserie sur les quais.',
+            adhesions: [
+                { titre: 'ADH - Brasserie du Port - 2026', montant: '230 €', paye: '0 €', statut: '❌ À payer', statutClass: 'badge-red' }
+            ],
+            contacts: ['Pierre Daguerre'],
+            nbAdhesions: '9'
+        },
+        'Bar Txoko': {
+            nom: 'Bar Txoko',
+            type: 'Adhérent', typeClass: 'badge-green',
+            activite: 'Bar', activiteClass: 'badge-teal',
+            provenance: 'Déjà dans la base', provenanceClass: 'badge-blue',
+            comptable: false,
+            siret: '74 567 890 100 045', naf: '5630Z',
+            convention: 'IDCC 1979 — HCR',
+            adresse: '3 Place de la République', cp: '64700', ville: 'Hendaye',
+            zoneGeo: 'Hendaye', zoneGeoClass: 'badge-blue',
+            email: 'bartxoko64@gmail.com', telephone: '05 59 20 11 45',
+            site: '',
+            permisExploitation: true, datePermisExploitation: '18/06/2020', refPermisExploitation: 'Maite Irigoyen',
+            formationHygiene: true, dateFormationHygiene: '10/01/2022', refHygiene: 'Maite Irigoyen',
+            permisFormer: false, datePermisFormer: '—', refPermisFormer: '',
+            nbSalaries: '3',
+            statutChef: 'Régime général de la SECU', statutChefClass: 'badge-blue',
+            statutConjoint: 'Non applicable', statutConjointClass: 'badge-gray',
+            rgpd: [true, true, true, true, true],
+            dateAdhesion: '22/06/2020',
+            notes: 'Petit bar de quartier convivial.',
+            adhesions: [
+                { titre: 'ADH - Bar Txoko - 2026', montant: '230 €', paye: '230 €', statut: '✅ Payée', statutClass: 'badge-green' }
+            ],
+            contacts: ['Maite Irigoyen'],
+            nbAdhesions: '5'
+        },
+        'Cabinet Comptable Harriet': {
+            nom: 'Cabinet Comptable Harriet',
+            type: 'Adhérent', typeClass: 'badge-green',
+            activite: 'Service', activiteClass: 'badge-blue',
+            provenance: 'Déjà dans la base', provenanceClass: 'badge-blue',
+            comptable: true,
+            siret: '28 901 234 500 089', naf: '6920Z',
+            convention: 'IDCC 0787 — Cabinets d\'experts-comptables',
+            adresse: '4 Place des Victoires', cp: '64100', ville: 'Bayonne',
+            zoneGeo: 'Bayonne', zoneGeoClass: 'badge-blue',
+            email: 'contact@harriet-compta.fr', telephone: '05 59 25 88 00',
+            site: 'www.harriet-compta.fr',
+            permisExploitation: false, datePermisExploitation: '—', refPermisExploitation: '',
+            formationHygiene: false, dateFormationHygiene: '—', refHygiene: '',
+            permisFormer: false, datePermisFormer: '—', refPermisFormer: '',
+            nbSalaries: '8',
+            statutChef: 'Régime général de la SECU', statutChefClass: 'badge-blue',
+            statutConjoint: 'Non applicable', statutConjointClass: 'badge-gray',
+            rgpd: [true, true, true, true, true],
+            dateAdhesion: '05/09/2019',
+            notes: 'Cabinet comptable partenaire de plusieurs adhérents UMIH.',
+            adhesions: [
+                { titre: 'ADH - Cabinet Harriet - 2026', montant: '270 €', paye: '270 €', statut: '✅ Payée', statutClass: 'badge-green' }
+            ],
+            contacts: [],
+            nbAdhesions: '6'
+        },
+        'Chez Pantxika': {
+            nom: 'Chez Pantxika',
+            type: 'Adhérent', typeClass: 'badge-green',
+            activite: 'Restaurant', activiteClass: 'badge-orange',
+            provenance: 'Déjà dans la base', provenanceClass: 'badge-blue',
+            comptable: false,
+            siret: '96 789 012 300 067', naf: '5610A',
+            convention: 'IDCC 1979 — HCR',
+            adresse: '5 Place du Village', cp: '64220', ville: 'Irouléguy',
+            zoneGeo: 'Pays Basque Intérieur', zoneGeoClass: 'badge-purple',
+            email: 'pantxika.rest@orange.fr', telephone: '05 59 37 08 27',
+            site: '',
+            permisExploitation: true, datePermisExploitation: '01/04/2022', refPermisExploitation: 'Josetxo Aguirre',
+            formationHygiene: true, dateFormationHygiene: '15/10/2022', refHygiene: 'Josetxo Aguirre',
+            permisFormer: false, datePermisFormer: '—', refPermisFormer: '',
+            nbSalaries: '5',
+            statutChef: 'Régime général de la SECU', statutChefClass: 'badge-blue',
+            statutConjoint: 'Conjoint collaborateur', statutConjointClass: 'badge-blue',
+            rgpd: [true, true, true, true, true],
+            dateAdhesion: '03/04/2022',
+            notes: 'Petit restaurant familial en zone intérieure.',
+            adhesions: [
+                { titre: 'ADH - Chez Pantxika - 2026', montant: '230 €', paye: '0 €', statut: '❌ À payer', statutClass: 'badge-red' }
+            ],
+            contacts: ['Josetxo Aguirre'],
+            nbAdhesions: '4'
+        },
+        'L\'Auberge du Labourd': {
+            nom: 'L\'Auberge du Labourd',
+            type: 'Adhérent', typeClass: 'badge-green',
+            activite: 'Auberge', activiteClass: 'badge-pink',
+            provenance: 'Déjà dans la base', provenanceClass: 'badge-blue',
+            comptable: false,
+            siret: '39 012 345 600 090', naf: '5510Z',
+            convention: 'IDCC 1979 — HCR',
+            adresse: '12 Route d\'Espagne', cp: '64310', ville: 'Sare',
+            zoneGeo: 'Pays de Rhune', zoneGeoClass: 'badge-purple',
+            email: 'auberge.labourd@wanadoo.fr', telephone: '05 59 54 90 03',
+            site: '',
+            permisExploitation: true, datePermisExploitation: '27/05/2023', refPermisExploitation: '',
+            formationHygiene: false, dateFormationHygiene: '—', refHygiene: '',
+            permisFormer: false, datePermisFormer: '—', refPermisFormer: '',
+            nbSalaries: '4',
+            statutChef: 'Régime général de la SECU', statutChefClass: 'badge-blue',
+            statutConjoint: 'Conjoint salarié', statutConjointClass: 'badge-teal',
+            rgpd: [true, true, false, false, true],
+            dateAdhesion: '27/05/2023',
+            notes: 'Auberge de charme dans le village de Sare.',
+            adhesions: [
+                { titre: 'ADH - L\'Auberge du Labourd - 2026', montant: '230 €', paye: '230 €', statut: '✅ Payée', statutClass: 'badge-green' }
+            ],
+            contacts: [],
+            nbAdhesions: '3'
+        },
+        'Restaurant Achury': {
+            nom: 'Restaurant Achury',
+            type: 'Adhérent', typeClass: 'badge-green',
+            activite: 'Restaurant', activiteClass: 'badge-orange',
+            provenance: 'Déjà dans la base', provenanceClass: 'badge-blue',
+            comptable: false,
+            siret: '50 123 456 700 001', naf: '5610A',
+            convention: 'IDCC 1979 — HCR',
+            adresse: '18 Avenue de Bayonne', cp: '64600', ville: 'Anglet',
+            zoneGeo: 'Anglet', zoneGeoClass: 'badge-blue',
+            email: 'achury.rest@gmail.com', telephone: '05 59 63 41 20',
+            site: '',
+            permisExploitation: true, datePermisExploitation: '30/03/2021', refPermisExploitation: '',
+            formationHygiene: true, dateFormationHygiene: '12/09/2022', refHygiene: '',
+            permisFormer: false, datePermisFormer: '—', refPermisFormer: '',
+            nbSalaries: '6',
+            statutChef: 'Régime général de la SECU', statutChefClass: 'badge-blue',
+            statutConjoint: 'Non applicable', statutConjointClass: 'badge-gray',
+            rgpd: [true, true, true, true, true],
+            dateAdhesion: '30/03/2021',
+            notes: 'Restaurant traditionnel basque à Anglet.',
+            adhesions: [
+                { titre: 'ADH - Restaurant Achury - 2026', montant: '230 €', paye: '0 €', statut: '❌ À payer', statutClass: 'badge-red' }
+            ],
+            contacts: [],
+            nbAdhesions: '5'
+        }
+    }
+};
+function buildMembrePanel(data) {
+    var rgpdLabels = ['UMIH Pays Basque','UMIH National','UMIHNA','SACEM et partenaires','Partenaires'];
+    var allOk = data.rgpd.every(function(v){return v;}); var anyOk = data.rgpd.some(function(v){return v;});
+    var rgpdIndicator = allOk ? '<span class="badge badge-green">🟢 Tous OK</span>' : (anyOk ? '<span class="badge badge-orange">🟠 Partiel</span>' : '<span class="badge badge-red">🔴 Aucun</span>');
+    var rgpdFields = data.rgpd.map(function(v,i){ return '<div class="detail-field"><div class="detail-field-value">' + (v ? '☑' : '☐') + ' Consentement ' + rgpdLabels[i] + '</div></div>'; }).join('');
+    var adhesionCards = data.adhesions.map(function(a){ return '<div class="linked-card"><div class="linked-card-title">' + a.titre + '</div><div class="linked-card-fields"><div class="linked-card-field"><span class="linked-card-field-label">Montant : </span><span class="linked-card-field-value">' + a.montant + '</span></div><div class="linked-card-field"><span class="linked-card-field-label">Payé : </span><span class="linked-card-field-value">' + a.paye + '</span></div><div class="linked-card-field linked-card-status"><span class="badge ' + a.statutClass + '">' + a.statut + '</span></div></div></div>'; }).join('');
+    var contactLinks = data.contacts.map(function(c){ return '<span class="detail-linked-record">' + c + '</span>'; }).join(' ');
+    return '<div class="detail-section"><h4 class="detail-section-title">Informations générales</h4>' +
+        '<div class="detail-field"><div class="detail-field-label">Nom de l\'entreprise</div><div class="detail-field-value">' + data.nom + '</div></div>' +
+        '<div class="detail-field"><div class="detail-field-label">Type</div><div class="detail-field-value"><span class="badge ' + data.typeClass + '">' + data.type + '</span></div></div>' +
+        '<div class="detail-field"><div class="detail-field-label">Activité</div><div class="detail-field-value"><span class="badge ' + data.activiteClass + '">' + data.activite + '</span></div></div>' +
+        '<div class="detail-field"><div class="detail-field-label">Provenance</div><div class="detail-field-value"><span class="badge ' + data.provenanceClass + '">' + data.provenance + '</span></div></div>' +
+        '<div class="detail-field"><div class="detail-field-label">Comptable ?</div><div class="detail-field-value">' + (data.comptable ? '☑ Cabinet comptable adhérent' : '☐ Cabinet comptable adhérent') + '</div></div></div>' +
+        '<div class="detail-section"><h4 class="detail-section-title">Identification légale</h4>' +
+        '<div class="detail-field"><div class="detail-field-label">SIRET</div><div class="detail-field-value">' + data.siret + '</div></div>' +
+        '<div class="detail-field"><div class="detail-field-label">Code NAF</div><div class="detail-field-value">' + data.naf + '</div></div>' +
+        '<div class="detail-field"><div class="detail-field-label">Convention collective</div><div class="detail-field-value">' + data.convention + '</div></div>' +
+        '<div class="detail-field"><div class="detail-field-label">URL Pappers</div><div class="detail-field-value">🔗 Voir sur Pappers</div></div></div>' +
+        '<div class="detail-section"><h4 class="detail-section-title">Adresse & localisation</h4>' +
+        '<div class="detail-field"><div class="detail-field-label">Adresse</div><div class="detail-field-value">' + data.adresse + '</div></div>' +
+        '<div class="detail-field"><div class="detail-field-label">Code postal</div><div class="detail-field-value">' + data.cp + '</div></div>' +
+        '<div class="detail-field"><div class="detail-field-label">Ville</div><div class="detail-field-value">' + data.ville + '</div></div>' +
+        '<div class="detail-field"><div class="detail-field-label">Zone géographique</div><div class="detail-field-value"><span class="badge ' + data.zoneGeoClass + '">' + data.zoneGeo + '</span></div></div></div>' +
+        '<div class="detail-section"><h4 class="detail-section-title">Coordonnées</h4>' +
+        '<div class="detail-field"><div class="detail-field-label">Email générique</div><div class="detail-field-value"><span class="col-email">' + data.email + '</span></div></div>' +
+        '<div class="detail-field"><div class="detail-field-label">Téléphone générique</div><div class="detail-field-value">' + data.telephone + '</div></div>' +
+        '<div class="detail-field"><div class="detail-field-label">Site internet</div><div class="detail-field-value">' + (data.site ? '🔗 ' + data.site : '—') + '</div></div></div>' +
+        '<div class="detail-section"><h4 class="detail-section-title">Formations</h4>' +
+        '<div class="detail-field"><div class="detail-field-label">Permis d\'exploitation</div><div class="detail-field-value">' + (data.permisExploitation ? '☑ Formation effectuée' : '☐ Formation effectuée') + '</div></div>' +
+        '<div class="detail-field"><div class="detail-field-label">Date Permis d\'exploitation</div><div class="detail-field-value">' + data.datePermisExploitation + '</div></div>' +
+        '<div class="detail-field"><div class="detail-field-label">Référent Permis d\'exploitation</div><div class="detail-field-value">' + (data.refPermisExploitation ? '<span class="detail-linked-record">' + data.refPermisExploitation + '</span>' : '—') + '</div></div>' +
+        '<div class="detail-field"><div class="detail-field-label">Formation Hygiène</div><div class="detail-field-value">' + (data.formationHygiene ? '☑ Formation effectuée' : '☐ Formation effectuée') + '</div></div>' +
+        '<div class="detail-field"><div class="detail-field-label">Date Formation Hygiène</div><div class="detail-field-value">' + data.dateFormationHygiene + '</div></div>' +
+        '<div class="detail-field"><div class="detail-field-label">Personne référente Hygiène</div><div class="detail-field-value">' + (data.refHygiene ? '<span class="detail-linked-record">' + data.refHygiene + '</span>' : '—') + '</div></div>' +
+        '<div class="detail-field"><div class="detail-field-label">Formation Permis de former</div><div class="detail-field-value">' + (data.permisFormer ? '☑ Formation effectuée' : '☐ Formation effectuée') + '</div></div>' +
+        '<div class="detail-field"><div class="detail-field-label">Date Permis de former</div><div class="detail-field-value">' + data.datePermisFormer + '</div></div>' +
+        '<div class="detail-field"><div class="detail-field-label">Personne référente Permis de former</div><div class="detail-field-value">' + (data.refPermisFormer ? '<span class="detail-linked-record">' + data.refPermisFormer + '</span>' : '—') + '</div></div></div>' +
+        '<div class="detail-section"><h4 class="detail-section-title">Représentativité</h4>' +
+        '<div class="detail-field"><div class="detail-field-label">Nombre de salariés</div><div class="detail-field-value">' + data.nbSalaries + '</div></div>' +
+        '<div class="detail-field"><div class="detail-field-label">Statut chef d\'entreprise</div><div class="detail-field-value"><span class="badge ' + data.statutChefClass + '">' + data.statutChef + '</span></div></div>' +
+        '<div class="detail-field"><div class="detail-field-label">Statut conjoint</div><div class="detail-field-value"><span class="badge ' + data.statutConjointClass + '">' + data.statutConjoint + '</span></div></div></div>' +
+        '<div class="detail-section"><h4 class="detail-section-title">RGPD — Consentements</h4>' + rgpdFields +
+        '<div class="detail-field"><div class="detail-field-label">Indicateur RGPD global (formule)</div><div class="detail-field-value">' + rgpdIndicator + '</div></div></div>' +
+        '<div class="detail-section"><h4 class="detail-section-title">Gestion</h4>' +
+        '<div class="detail-field"><div class="detail-field-label">Date de 1ère adhésion</div><div class="detail-field-value">' + data.dateAdhesion + '</div></div>' +
+        '<div class="detail-field"><div class="detail-field-label">Notes et commentaires</div><div class="detail-field-value" style="color:#555;font-size:13px;">' + (data.notes || '—') + '</div></div></div>' +
+        '<div class="detail-section"><h4 class="detail-section-title">Adhésions</h4><div class="linked-cards">' + adhesionCards + '</div></div>' +
+        '<div class="detail-section"><h4 class="detail-section-title">Relations</h4>' +
+        '<div class="detail-field"><div class="detail-field-label">Contacts liés</div><div class="detail-field-value"><div class="field-linked-records">' + contactLinks + '</div></div></div>' +
+        '<div class="detail-field"><div class="detail-field-label">Nombre d\'adhésions</div><div class="detail-field-value" style="color:#555;">' + data.nbAdhesions + '</div></div></div>';
+}
+function openSubPanel(type, name) {
+    var data = subPanelData[type] && subPanelData[type][name];
+    if (!data) return;
+    document.getElementById('sub-panel-title').textContent = name;
+    document.getElementById('sub-panel-body').innerHTML = buildMembrePanel(data);
+    document.getElementById('sub-panel').classList.add('open');
+}
+function closeSubPanel() { document.getElementById('sub-panel').classList.remove('open'); }
+</script>
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1440">
+    <title>TODO Partenaire — UMIH Pays Basque</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<div class="app-layout">
+    <aside class="sidebar">
+        <div class="sidebar-header"><span class="sidebar-logo">🔷</span><span class="sidebar-app-name">UMIH Pays Basque</span><span class="sidebar-chevron">▾</span></div>
+        <nav class="sidebar-nav">
+            <div class="sidebar-section">
+                <div class="sidebar-section-header"><span class="sidebar-section-icon">📊</span><span>Pilotage</span></div>
+                <a href="../pilotage/tableau-de-bord.html" class="sidebar-item">Tableau de bord</a>
+            </div>
+            <div class="sidebar-section">
+                <div class="sidebar-section-header"><span class="sidebar-section-icon">🏢</span><span>Adhérents</span></div>
+                <a href="../adherents/liste-membres.html" class="sidebar-item">Liste des membres</a>
+                <a href="../adherents/liste-prospects.html" class="sidebar-item">Liste des prospects</a>
+                <a href="../adherents/suivi-prospects.html" class="sidebar-item">Suivi des prospects</a>
+                <a href="../adherents/contacts.html" class="sidebar-item">Liste des contacts</a>
+                <a href="../adherents/suivi-adhesions.html" class="sidebar-item">Suivi des adhésions</a>
+                <a href="../adherents/rgpd.html" class="sidebar-item">RGPD</a>
+            </div>
+            <div class="sidebar-section">
+                <div class="sidebar-section-header"><span class="sidebar-section-icon">🤝</span><span>Partenaires</span></div>
+                <a href="../partenaires/liste-partenaires.html" class="sidebar-item">Liste des partenaires</a>
+                <a href="../partenaires/suivi-partenariats.html" class="sidebar-item">Suivi des partenariats</a>
+                <a href="../partenaires/suivi-prospects-partenaires.html" class="sidebar-item">Suivi prospects partenaires</a>
+                <a href="../partenaires/echeances-proches.html" class="sidebar-item">Échéances proches</a>
+            </div>
+            <div class="sidebar-section">
+                <div class="sidebar-section-header"><span class="sidebar-section-icon">⚙️</span><span>Opérations</span></div>
+                <a href="todo-commercial.html" class="sidebar-item">TODO Commercial</a>
+                <a href="todo-partenaire.html" class="sidebar-item active">TODO Partenaire</a>
+                <a href="todo-admin.html" class="sidebar-item">TODO Admin</a>
+                <a href="logs.html" class="sidebar-item">Suivi des logs</a>
+            </div>
+        </nav>
+        <div class="sidebar-footer"><span>👤</span><span>Partager</span></div>
+    </aside>
+
+    <main class="main-area">
+        <div class="disclaimer-banner">Interfaces à usage visuel uniquement — Aperçu non fonctionnel, données fictives</div>
+        <header class="page-header">
+            <div class="header-left">
+                <span class="breadcrumb">
+                    <a href="#" class="breadcrumb-parent">Opérations</a>
+                    <span class="breadcrumb-sep">›</span>
+                    <span class="breadcrumb-current">TODO Partenaire</span>
+                </span>
+            </div>
+            <div class="header-right">
+                <button class="header-btn">Filtre</button>
+                <button class="header-btn-icon">🔍</button>
+            </div>
+        </header>
+
+        <div class="content-area content-white">
+            <div class="exam-split">
+                <div class="exam-list-panel">
+                    <div class="exam-list-toolbar">
+                        <div class="exam-list-views">
+                            <button class="exam-view-btn active" title="Liste">☰</button>
+                            <button class="exam-view-btn" title="Filtrer">⫽</button>
+                        </div>
+                    </div>
+                    <div class="exam-search-wrapper">
+                        <span class="exam-search-icon">🔍</span>
+                        <input type="text" class="exam-search-input" id="exam-search" placeholder="Rechercher une tâche..." oninput="filterExamList(this.value)">
+                    </div>
+                    <div class="exam-list-scroll" id="exam-list-scroll">
+                        <div class="exam-item exam-item-pending active" data-record-id="1" data-status="pending" onclick="selectExamItem(this)">
+                            <div class="exam-item-icon">📄</div>
+                            <div class="exam-item-content">
+                                <div class="exam-item-title">Préparer offre renouvellement Assurance Lacoste</div>
+                                <span class="badge badge-gray">À faire</span>
+                            </div>
+                        </div>
+                        <div class="exam-item exam-item-pending" data-record-id="2" data-status="pending" onclick="selectExamItem(this)">
+                            <div class="exam-item-icon">📄</div>
+                            <div class="exam-item-content">
+                                <div class="exam-item-title">Envoyer mailing promotion Fournisseur Bidart</div>
+                                <span class="badge badge-gray">À faire</span>
+                            </div>
+                        </div>
+                        <div class="exam-item exam-item-pending" data-record-id="3" data-status="pending" onclick="selectExamItem(this)">
+                            <div class="exam-item-icon">📄</div>
+                            <div class="exam-item-content">
+                                <div class="exam-item-title">Contacter prospect Cabinet Leroy pour partenariat</div>
+                                <span class="badge badge-gray">À faire</span>
+                            </div>
+                        </div>
+                        <div class="exam-item exam-item-done" data-record-id="4" data-status="done" onclick="selectExamItem(this)">
+                            <div class="exam-item-icon">📄</div>
+                            <div class="exam-item-content">
+                                <div class="exam-item-title">Post LinkedIn partenaire Banque Populaire</div>
+                                <span class="badge badge-green">Terminé</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exam-detail-panel" id="exam-detail-panel">
+                    <div class="exam-detail-block" data-record-id="1">
+                        <div class="exam-detail-nav">
+                            <button class="exam-nav-btn" onclick="navigateExam(-1)" title="Précédent">˄</button>
+                            <button class="exam-nav-btn" onclick="navigateExam(1)" title="Suivant">˅</button>
+                        </div>
+                        <h1 class="exam-detail-title">Préparer offre renouvellement Assurance Lacoste</h1>
+                        <div class="exam-detail-fields">
+                            <div class="exam-field-row"><div class="exam-field-label">Nom de la tâche</div><div class="exam-field-value">Préparer offre renouvellement Assurance Lacoste</div></div>
+                            <div class="exam-field-row"><div class="exam-field-label">Catégorie</div><div class="exam-field-value"><span class="badge badge-orange">Partenaire</span></div></div>
+                            <div class="exam-field-row"><div class="exam-field-label">Statut</div><div class="exam-field-value"><span class="badge badge-gray">À faire</span></div></div>
+                            <div class="exam-field-row"><div class="exam-field-label">Date de création</div><div class="exam-field-value" style="color:#555;">05/03/2026</div></div>
+                            <div class="exam-field-row"><div class="exam-field-label">Lien</div><div class="exam-field-value"><a href="#" class="exam-field-link">mailto:contact@assurance-lacoste.fr</a></div></div>
+                            <div class="exam-field-row"><div class="exam-field-label">Commentaires</div><div class="exam-field-value exam-field-longtext">Partenariat Premium arrivant à échéance le 15/04. Préparer proposition de renouvellement avec nouvelles conditions.</div></div>
+                        </div>
+                    </div>
+                    <div class="exam-detail-block" data-record-id="2" style="display:none">
+                        <div class="exam-detail-nav">
+                            <button class="exam-nav-btn" onclick="navigateExam(-1)" title="Précédent">˄</button>
+                            <button class="exam-nav-btn" onclick="navigateExam(1)" title="Suivant">˅</button>
+                        </div>
+                        <h1 class="exam-detail-title">Envoyer mailing promotion Fournisseur Bidart</h1>
+                        <div class="exam-detail-fields">
+                            <div class="exam-field-row"><div class="exam-field-label">Nom de la tâche</div><div class="exam-field-value">Envoyer mailing promotion Fournisseur Bidart</div></div>
+                            <div class="exam-field-row"><div class="exam-field-label">Catégorie</div><div class="exam-field-value"><span class="badge badge-orange">Partenaire</span></div></div>
+                            <div class="exam-field-row"><div class="exam-field-label">Statut</div><div class="exam-field-value"><span class="badge badge-gray">À faire</span></div></div>
+                            <div class="exam-field-row"><div class="exam-field-label">Date de création</div><div class="exam-field-value" style="color:#555;">06/03/2026</div></div>
+                            <div class="exam-field-row"><div class="exam-field-label">Lien</div><div class="exam-field-value" style="color:#999;">—</div></div>
+                            <div class="exam-field-row"><div class="exam-field-label">Commentaires</div><div class="exam-field-value exam-field-longtext">Mailing à envoyer aux adhérents : promotion spéciale fournisseur Bidart pour mars 2026.</div></div>
+                        </div>
+                    </div>
+                    <div class="exam-detail-block" data-record-id="3" style="display:none">
+                        <div class="exam-detail-nav">
+                            <button class="exam-nav-btn" onclick="navigateExam(-1)" title="Précédent">˄</button>
+                            <button class="exam-nav-btn" onclick="navigateExam(1)" title="Suivant">˅</button>
+                        </div>
+                        <h1 class="exam-detail-title">Contacter prospect Cabinet Leroy pour partenariat</h1>
+                        <div class="exam-detail-fields">
+                            <div class="exam-field-row"><div class="exam-field-label">Nom de la tâche</div><div class="exam-field-value">Contacter prospect Cabinet Leroy pour partenariat</div></div>
+                            <div class="exam-field-row"><div class="exam-field-label">Catégorie</div><div class="exam-field-value"><span class="badge badge-orange">Partenaire</span></div></div>
+                            <div class="exam-field-row"><div class="exam-field-label">Statut</div><div class="exam-field-value"><span class="badge badge-gray">À faire</span></div></div>
+                            <div class="exam-field-row"><div class="exam-field-label">Date de création</div><div class="exam-field-value" style="color:#555;">07/03/2026</div></div>
+                            <div class="exam-field-row"><div class="exam-field-label">Lien</div><div class="exam-field-value"><a href="#" class="exam-field-link">tel:0559445566</a></div></div>
+                            <div class="exam-field-row"><div class="exam-field-label">Commentaires</div><div class="exam-field-value exam-field-longtext">Cabinet comptable intéressé par un partenariat Standard. Premier appel à planifier.</div></div>
+                        </div>
+                    </div>
+                    <div class="exam-detail-block" data-record-id="4" style="display:none">
+                        <div class="exam-detail-nav">
+                            <button class="exam-nav-btn" onclick="navigateExam(-1)" title="Précédent">˄</button>
+                            <button class="exam-nav-btn" onclick="navigateExam(1)" title="Suivant">˅</button>
+                        </div>
+                        <h1 class="exam-detail-title">Post LinkedIn partenaire Banque Populaire</h1>
+                        <div class="exam-detail-fields">
+                            <div class="exam-field-row"><div class="exam-field-label">Nom de la tâche</div><div class="exam-field-value">Post LinkedIn partenaire Banque Populaire</div></div>
+                            <div class="exam-field-row"><div class="exam-field-label">Catégorie</div><div class="exam-field-value"><span class="badge badge-orange">Partenaire</span></div></div>
+                            <div class="exam-field-row"><div class="exam-field-label">Statut</div><div class="exam-field-value"><span class="badge badge-green">Terminé</span></div></div>
+                            <div class="exam-field-row"><div class="exam-field-label">Date de création</div><div class="exam-field-value" style="color:#555;">01/03/2026</div></div>
+                            <div class="exam-field-row"><div class="exam-field-label">Lien</div><div class="exam-field-value"><a href="#" class="exam-field-link">https://linkedin.com/post/umih-pb</a></div></div>
+                            <div class="exam-field-row"><div class="exam-field-label">Commentaires</div><div class="exam-field-value exam-field-longtext">Post publié le 03/03. Bon engagement, 45 likes et 12 partages.</div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+<script>
+var currentExamIndex = 0;
+var examItems = [];
+function initExamItems() { examItems = Array.from(document.querySelectorAll('#exam-list-scroll .exam-item')); if (examItems.length > 0) selectExamItem(examItems[0]); }
+function selectExamItem(item) { document.querySelectorAll('#exam-list-scroll .exam-item').forEach(function(el) { el.classList.remove('active'); }); item.classList.add('active'); examItems = Array.from(document.querySelectorAll('#exam-list-scroll .exam-item')); currentExamIndex = examItems.indexOf(item); updateExamDetail(item); item.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); }
+function updateExamDetail(item) { var recordId = item.getAttribute('data-record-id'); document.querySelectorAll('.exam-detail-block').forEach(function(block) { block.style.display = (block.getAttribute('data-record-id') === recordId) ? '' : 'none'; }); }
+function navigateExam(direction) { examItems = Array.from(document.querySelectorAll('#exam-list-scroll .exam-item')); if (examItems.length === 0) return; var newIndex = currentExamIndex + direction; if (newIndex < 0) newIndex = 0; if (newIndex >= examItems.length) newIndex = examItems.length - 1; selectExamItem(examItems[newIndex]); }
+function filterExamList(query) { var items = document.querySelectorAll('#exam-list-scroll .exam-item'); var lowerQuery = query.toLowerCase(); items.forEach(function(item) { var title = item.querySelector('.exam-item-title'); var text = title ? title.textContent.toLowerCase() : ''; item.style.display = text.indexOf(lowerQuery) !== -1 ? '' : 'none'; }); }
+document.addEventListener('DOMContentLoaded', function() { initExamItems(); });
+initExamItems();
+</script>
+</body>
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1440">
+    <title>Suivi prospects partenaires — UMIH Pays Basque</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<div class="app-layout">
+    <aside class="sidebar">
+        <div class="sidebar-header"><span class="sidebar-logo">🔷</span><span class="sidebar-app-name">UMIH Pays Basque</span><span class="sidebar-chevron">▾</span></div>
+        <nav class="sidebar-nav">
+            <div class="sidebar-section">
+                <div class="sidebar-section-header"><span class="sidebar-section-icon">📊</span><span>Pilotage</span></div>
+                <a href="../pilotage/tableau-de-bord.html" class="sidebar-item">Tableau de bord</a>
+            </div>
+            <div class="sidebar-section">
+                <div class="sidebar-section-header"><span class="sidebar-section-icon">🏢</span><span>Adhérents</span></div>
+                <a href="../adherents/liste-membres.html" class="sidebar-item">Liste des membres</a>
+                <a href="../adherents/liste-prospects.html" class="sidebar-item">Liste des prospects</a>
+                <a href="../adherents/suivi-prospects.html" class="sidebar-item">Suivi des prospects</a>
+                <a href="../adherents/contacts.html" class="sidebar-item">Liste des contacts</a>
+                <a href="../adherents/suivi-adhesions.html" class="sidebar-item">Suivi des adhésions</a>
+                <a href="../adherents/rgpd.html" class="sidebar-item">RGPD</a>
+            </div>
+            <div class="sidebar-section">
+                <div class="sidebar-section-header"><span class="sidebar-section-icon">🤝</span><span>Partenaires</span></div>
+                <a href="liste-partenaires.html" class="sidebar-item">Liste des partenaires</a>
+                <a href="suivi-partenariats.html" class="sidebar-item">Suivi des partenariats</a>
+                <a href="suivi-prospects-partenaires.html" class="sidebar-item active">Suivi prospects partenaires</a>
+                <a href="echeances-proches.html" class="sidebar-item">Échéances proches</a>
+            </div>
+            <div class="sidebar-section">
+                <div class="sidebar-section-header"><span class="sidebar-section-icon">⚙️</span><span>Opérations</span></div>
+                <a href="../operations/todo-commercial.html" class="sidebar-item">TODO Commercial</a>
+                <a href="../operations/todo-partenaire.html" class="sidebar-item">TODO Partenaire</a>
+                <a href="../operations/todo-admin.html" class="sidebar-item">TODO Admin</a>
+                <a href="../operations/logs.html" class="sidebar-item">Suivi des logs</a>
+            </div>
+        </nav>
+        <div class="sidebar-footer"><span>👤</span><span>Partager</span></div>
+    </aside>
+
+    <main class="main-area">
+        <div class="disclaimer-banner">Interfaces à usage visuel uniquement — Aperçu non fonctionnel, données fictives</div>
+        <header class="page-header">
+            <div class="header-left">
+                <span class="breadcrumb">
+                    <a href="#" class="breadcrumb-parent">Partenaires</a>
+                    <span class="breadcrumb-sep">›</span>
+                    <span class="breadcrumb-current">Suivi prospects partenaires</span>
+                </span>
+            </div>
+            <div class="header-right">
+                <button class="header-btn">Filtre</button>
+                <button class="header-btn-icon">🔍</button>
+                <button class="btn-primary">➕ Créer un prospect</button>
+            </div>
+        </header>
+
+        <div class="content-area content-kanban">
+            <div class="kanban-board">
+
+                <!-- Colonne 1 : Mail -->
+                <div class="kanban-column">
+                    <div class="kanban-column-header">
+                        <span class="kanban-column-title">Mail</span>
+                        <span class="kanban-column-count">3</span>
+                    </div>
+                    <div class="kanban-column-body">
+                        <div class="kanban-card" data-record-name="Cabinet Leroy" onclick="openRecord(this)">
+                            <div class="kanban-card-title">Cabinet Leroy</div>
+                            <div class="kanban-card-fields">
+                                <span class="badge badge-cyan">Service</span>
+                                <span style="font-size:12px;color:#666;">Bayonne</span>
+                            </div>
+                        </div>
+                        <div class="kanban-card" data-record-name="Imprimerie Basque" onclick="openRecord(this)">
+                            <div class="kanban-card-title">Imprimerie Basque</div>
+                            <div class="kanban-card-fields">
+                                <span class="badge badge-orange">Industrie</span>
+                                <span style="font-size:12px;color:#666;">Anglet</span>
+                            </div>
+                        </div>
+                        <div class="kanban-card" data-record-name="Garage Etxeberria" onclick="openRecord(this)">
+                            <div class="kanban-card-title">Garage Etxeberria</div>
+                            <div class="kanban-card-fields">
+                                <span class="badge badge-cyan">Service</span>
+                                <span style="font-size:12px;color:#666;">Hendaye</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Colonne 2 : 1er appel -->
+                <div class="kanban-column">
+                    <div class="kanban-column-header">
+                        <span class="kanban-column-title">1er appel</span>
+                        <span class="kanban-column-count">2</span>
+                    </div>
+                    <div class="kanban-column-body">
+                        <div class="kanban-card" data-record-name="Fournisseur Bidart" onclick="openRecord(this)">
+                            <div class="kanban-card-title">Fournisseur Bidart</div>
+                            <div class="kanban-card-fields">
+                                <span class="badge badge-orange">Industrie</span>
+                                <span style="font-size:12px;color:#666;">Bidart</span>
+                            </div>
+                        </div>
+                        <div class="kanban-card" data-record-name="Agence Web Izpiritu" onclick="openRecord(this)">
+                            <div class="kanban-card-title">Agence Web Izpiritu</div>
+                            <div class="kanban-card-fields">
+                                <span class="badge badge-cyan">Service</span>
+                                <span style="font-size:12px;color:#666;">Biarritz</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Colonne 3 : RDV -->
+                <div class="kanban-column">
+                    <div class="kanban-column-header">
+                        <span class="kanban-column-title">RDV</span>
+                        <span class="kanban-column-count">1</span>
+                    </div>
+                    <div class="kanban-column-body">
+                        <div class="kanban-card" data-record-name="Assurance Lacoste" onclick="openRecord(this)">
+                            <div class="kanban-card-title">Assurance Lacoste</div>
+                            <div class="kanban-card-fields">
+                                <span class="badge badge-cyan">Service</span>
+                                <span style="font-size:12px;color:#666;">Bayonne</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Colonne 4 : Accepté -->
+                <div class="kanban-column">
+                    <div class="kanban-column-header">
+                        <span class="kanban-column-title">Accepté</span>
+                        <span class="kanban-column-count">2</span>
+                    </div>
+                    <div class="kanban-column-body">
+                        <div class="kanban-card" data-record-name="Banque Populaire" onclick="openRecord(this)">
+                            <div class="kanban-card-title">Banque Populaire</div>
+                            <div class="kanban-card-fields">
+                                <span class="badge badge-cyan">Service</span>
+                                <span style="font-size:12px;color:#666;">Bayonne</span>
+                            </div>
+                        </div>
+                        <div class="kanban-card" data-record-name="Cave Irouléguy" onclick="openRecord(this)">
+                            <div class="kanban-card-title">Cave Irouléguy</div>
+                            <div class="kanban-card-fields">
+                                <span class="badge badge-green">Agricole</span>
+                                <span style="font-size:12px;color:#666;">Pays Basque Int.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Colonne 5 : Refusé -->
+                <div class="kanban-column">
+                    <div class="kanban-column-header">
+                        <span class="kanban-column-title">Refusé</span>
+                        <span class="kanban-column-count">1</span>
+                    </div>
+                    <div class="kanban-column-body">
+                        <div class="kanban-card" data-record-name="Fournitures Martin" onclick="openRecord(this)">
+                            <div class="kanban-card-title">Fournitures Martin</div>
+                            <div class="kanban-card-fields">
+                                <span class="badge badge-orange">Industrie</span>
+                                <span style="font-size:12px;color:#666;">Pau</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+</div>
+
+<!-- FICHE LATERALE -->
+<div class="detail-panel" id="detail-panel">
+    <div class="detail-panel-header">
+        <h3 class="detail-panel-title" id="detail-panel-title">—</h3>
+        <div class="detail-panel-actions">
+            <button class="detail-panel-expand" title="Ouvrir en plein écran">⤢</button>
+            <button class="detail-panel-close" onclick="closeDetailPanel()">✕</button>
+        </div>
+    </div>
+    <div class="detail-panel-body">
+        <div class="detail-section">
+            <h4 class="detail-section-title">Informations générales</h4>
+            <div class="detail-field"><div class="detail-field-label">Nom de l'entreprise</div>
+                <div class="detail-field-value"><span class="field-readonly" id="detail-nom">Cabinet Leroy</span></div>
+            </div>
+            <div class="detail-field"><div class="detail-field-label">Type</div>
+                <div class="detail-field-value"><span class="badge badge-gray">Prospect</span></div>
+            </div>
+            <div class="detail-field"><div class="detail-field-label">Statut de suivi prospect</div>
+                <div class="detail-field-value">
+                    <div class="field-select" data-field="statut-prospect-p">
+                        <div class="field-select-value" onclick="toggleSelect(this)">
+                            <span class="badge badge-gray" id="val-statut-prospect-p">Mail</span>
+                            <span class="field-select-arrow">▾</span>
+                        </div>
+                        <div class="field-select-dropdown" id="dropdown-statut-prospect-p">
+                            <div class="field-select-option selected" data-badge-class="badge-gray" onclick="selectOption(this,'statut-prospect-p')">Mail</div>
+                            <div class="field-select-option" data-badge-class="badge-blue" onclick="selectOption(this,'statut-prospect-p')">1er appel</div>
+                            <div class="field-select-option" data-badge-class="badge-yellow" onclick="selectOption(this,'statut-prospect-p')">RDV</div>
+                            <div class="field-select-option" data-badge-class="badge-green" onclick="selectOption(this,'statut-prospect-p')">Accepté</div>
+                            <div class="field-select-option" data-badge-class="badge-red" onclick="selectOption(this,'statut-prospect-p')">Refusé</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="detail-field"><div class="detail-field-label">Activité</div>
+                <div class="detail-field-value"><span class="badge badge-cyan">Service</span></div>
+            </div>
+            <div class="detail-field"><div class="detail-field-label">Catégorie</div>
+                <div class="detail-field-value"><span class="badge badge-blue">Standard</span></div>
+            </div>
+        </div>
+        <div class="detail-section">
+            <h4 class="detail-section-title">Coordonnées</h4>
+            <div class="detail-field"><div class="detail-field-label">Email générique</div>
+                <div class="detail-field-value"><span class="col-email">contact@cabinet-leroy.fr</span></div>
+            </div>
+            <div class="detail-field"><div class="detail-field-label">Téléphone générique</div>
+                <div class="detail-field-value">05 59 44 55 66</div>
+            </div>
+        </div>
+        <div class="detail-section">
+            <h4 class="detail-section-title">Notes</h4>
+            <div class="detail-field"><div class="detail-field-label">Notes et commentaires</div>
+                <div class="detail-field-value" style="color:#555;font-size:13px;">Cabinet comptable spécialisé CHR. Premier contact par mail envoyé le 01/03.</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+function openRecord(el) { var name = el.getAttribute('data-record-name') || '—'; document.getElementById('detail-panel-title').textContent = name; document.getElementById('detail-nom').textContent = name; document.getElementById('detail-panel').classList.add('open'); }
+function closeDetailPanel() { document.getElementById('detail-panel').classList.remove('open'); }
+document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeDetailPanel(); });
+function toggleSelect(trigger) { var dropdown = trigger.nextElementSibling; var isOpen = dropdown.classList.contains('open'); document.querySelectorAll('.field-select-dropdown.open').forEach(function(d) { d.classList.remove('open'); }); if (!isOpen) dropdown.classList.add('open'); }
+function selectOption(option, fieldName) { var text = option.textContent.trim(); var badgeClass = option.getAttribute('data-badge-class') || 'badge-gray'; var valueEl = document.getElementById('val-' + fieldName); if (valueEl) { valueEl.textContent = text; valueEl.className = 'badge ' + badgeClass; } option.closest('.field-select-dropdown').classList.remove('open'); }
+document.addEventListener('click', function(e) { if (!e.target.closest('.field-select')) { document.querySelectorAll('.field-select-dropdown.open').forEach(function(d) { d.classList.remove('open'); }); } });
+</script>
+</body>
+</html>
