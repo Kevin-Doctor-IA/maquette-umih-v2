@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1440">
+    <title>RGPD — UMIH Pays Basque</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<div class="app-layout">
+    <aside class="sidebar">
+        <div class="sidebar-header"><span class="sidebar-logo">🔷</span><span class="sidebar-app-name">UMIH Pays Basque</span><span class="sidebar-chevron">▾</span></div>
+        <nav class="sidebar-nav">
+            <div class="sidebar-section">
+                <div class="sidebar-section-header"><span class="sidebar-section-icon">📊</span><span>Pilotage</span></div>
+                <a href="../pilotage/tableau-de-bord.html" class="sidebar-item">Tableau de bord</a>
+            </div>
+            <div class="sidebar-section">
+                <div class="sidebar-section-header"><span class="sidebar-section-icon">🏢</span><span>Adhérents</span></div>
+                <a href="liste-membres.html" class="sidebar-item">Liste des membres</a>
+                <a href="liste-prospects.html" class="sidebar-item">Liste des prospects</a>
+                <a href="suivi-prospects.html" class="sidebar-item">Suivi des prospects</a>
+                <a href="contacts.html" class="sidebar-item">Liste des contacts</a>
+                <a href="suivi-adhesions.html" class="sidebar-item">Suivi des adhésions</a>
+                <a href="rgpd.html" class="sidebar-item active">RGPD</a>
+            </div>
+            <div class="sidebar-section">
+                <div class="sidebar-section-header"><span class="sidebar-section-icon">🤝</span><span>Partenaires</span></div>
+                <a href="../partenaires/liste-partenaires.html" class="sidebar-item">Liste des partenaires</a>
+                <a href="../partenaires/suivi-partenariats.html" class="sidebar-item">Suivi des partenariats</a>
+                <a href="../partenaires/suivi-prospects-partenaires.html" class="sidebar-item">Suivi prospects partenaires</a>
+                <a href="../partenaires/contacts-partenaires.html" class="sidebar-item">Contacts partenaires</a>
+                <a href="../partenaires/echeances-proches.html" class="sidebar-item">Échéances proches</a>
+            </div>
+            <div class="sidebar-section">
+                <div class="sidebar-section-header"><span class="sidebar-section-icon">⚙️</span><span>Opérations</span></div>
+                <a href="../operations/todo-commercial.html" class="sidebar-item">TODO Commercial</a>
+                <a href="../operations/todo-partenaire.html" class="sidebar-item">TODO Partenaire</a>
+                <a href="../operations/todo-admin.html" class="sidebar-item">TODO Admin</a>
+                <a href="../operations/logs.html" class="sidebar-item">Suivi des logs</a>
+            </div>
+        </nav>
+        <div class="sidebar-footer"><span>👤</span><span>Partager</span></div>
+    </aside>
+
+    <main class="main-area">
+        <div class="disclaimer-banner">Interfaces à usage visuel uniquement — Aperçu non fonctionnel, données fictives</div>
+        <header class="page-header">
+            <div class="header-left">
+                <span class="breadcrumb">
+                    <a href="#" class="breadcrumb-parent">Adhérents</a>
+                    <span class="breadcrumb-sep">›</span>
+                    <span class="breadcrumb-current">RGPD</span>
+                </span>
+            </div>
+            <div class="header-right">
+                <button class="header-btn">Filtre</button>
+                <button class="header-btn">Trier</button>
+                <button class="header-btn-icon">🔍</button>
+                <button class="header-btn">↓ Export</button>
+            </div>
+        </header>
+
+        <div class="content-area content-white">
+            <div class="list-tabs">
+                <button class="list-tab active" onclick="switchRgpdTab(this, 'ok')">Tous OK (112)</button>
+                <button class="list-tab" onclick="switchRgpdTab(this, 'partiel')">Partiel (48)</button>
+                <button class="list-tab" onclick="switchRgpdTab(this, 'aucun')">Aucun (27)</button>
+            </div>
+
+            <!-- Onglet Tous OK -->
+            <div class="list-table-wrapper rgpd-tab-content" id="tab-ok">
+                <table class="list-table">
+                    <thead>
+                        <tr>
+                            <th class="col-checkbox"><input type="checkbox" disabled></th>
+                            <th>Nom membre</th>
+                            <th>Email générique</th>
+                            <th>RGPD</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="list-row"><td class="col-checkbox"><input type="checkbox" disabled></td><td class="col-primary">Hôtel du Palais</td><td class="col-email">contact@hoteldupalais.fr</td><td><span class="badge badge-green">🟢 Tous OK</span></td></tr>
+                        <tr class="list-row"><td class="col-checkbox"><input type="checkbox" disabled></td><td class="col-primary">Restaurant Txalupa</td><td class="col-email">txalupa@gmail.com</td><td><span class="badge badge-green">🟢 Tous OK</span></td></tr>
+                        <tr class="list-row"><td class="col-checkbox"><input type="checkbox" disabled></td><td class="col-primary">Bar Hegoa</td><td class="col-email">barhegoa@orange.fr</td><td><span class="badge badge-green">🟢 Tous OK</span></td></tr>
+                        <tr class="list-row"><td class="col-checkbox"><input type="checkbox" disabled></td><td class="col-primary">Hôtel Laminak</td><td class="col-email">hotel.laminak@gmail.com</td><td><span class="badge badge-green">🟢 Tous OK</span></td></tr>
+                        <tr class="list-row"><td class="col-checkbox"><input type="checkbox" disabled></td><td class="col-primary">Brasserie du Port</td><td class="col-email">brasserieduport@gmail.com</td><td><span class="badge badge-green">🟢 Tous OK</span></td></tr>
+                        <tr class="list-row"><td class="col-checkbox"><input type="checkbox" disabled></td><td class="col-primary">Restaurant Le Chistera</td><td class="col-email">lechistera@wanadoo.fr</td><td><span class="badge badge-green">🟢 Tous OK</span></td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Onglet Partiel -->
+            <div class="list-table-wrapper rgpd-tab-content" id="tab-partiel" style="display:none">
+                <table class="list-table">
+                    <thead>
+                        <tr>
+                            <th class="col-checkbox"><input type="checkbox" disabled></th>
+                            <th>Nom membre</th>
+                            <th>Email générique</th>
+                            <th>RGPD</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="list-row"><td class="col-checkbox"><input type="checkbox" disabled></td><td class="col-primary">Snack Mendi</td><td class="col-email">snack.mendi@gmail.com</td><td><span class="badge badge-orange">🟠 Partiel</span></td></tr>
+                        <tr class="list-row"><td class="col-checkbox"><input type="checkbox" disabled></td><td class="col-primary">Hôtel Argi Eder</td><td class="col-email">contact@argieder.fr</td><td><span class="badge badge-orange">🟠 Partiel</span></td></tr>
+                        <tr class="list-row"><td class="col-checkbox"><input type="checkbox" disabled></td><td class="col-primary">Bar Restaurant Xuriya</td><td class="col-email">xuriya64@gmail.com</td><td><span class="badge badge-orange">🟠 Partiel</span></td></tr>
+                        <tr class="list-row"><td class="col-checkbox"><input type="checkbox" disabled></td><td class="col-primary">Auberge Etche Ona</td><td class="col-email">etcheona@orange.fr</td><td><span class="badge badge-orange">🟠 Partiel</span></td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Onglet Aucun -->
+            <div class="list-table-wrapper rgpd-tab-content" id="tab-aucun" style="display:none">
+                <table class="list-table">
+                    <thead>
+                        <tr>
+                            <th class="col-checkbox"><input type="checkbox" disabled></th>
+                            <th>Nom membre</th>
+                            <th>Email générique</th>
+                            <th>RGPD</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="list-row"><td class="col-checkbox"><input type="checkbox" disabled></td><td class="col-primary">Discothèque Akelaŕe</td><td class="col-email">akelarre.disco@gmail.com</td><td><span class="badge badge-red">🔴 Aucun</span></td></tr>
+                        <tr class="list-row"><td class="col-checkbox"><input type="checkbox" disabled></td><td class="col-primary">Food Truck Zazpi</td><td class="col-email">foodtruck.zazpi@gmail.com</td><td><span class="badge badge-red">🔴 Aucun</span></td></tr>
+                        <tr class="list-row"><td class="col-checkbox"><input type="checkbox" disabled></td><td class="col-primary">Traiteur Urdina</td><td class="col-email">urdina.traiteur@orange.fr</td><td><span class="badge badge-red">🔴 Aucun</span></td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="list-footer">
+                <span class="list-count" id="rgpd-count">6 enregistrements</span>
+            </div>
+        </div>
+    </main>
+</div>
+
+<script>
+function switchRgpdTab(btn, tabId) {
+    document.querySelectorAll('.list-tab').forEach(t => t.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.rgpd-tab-content').forEach(c => c.style.display = 'none');
+    var targetId = 'tab-' + tabId;
+    document.getElementById(targetId).style.display = '';
+    var count = document.getElementById(targetId).querySelectorAll('.list-row').length;
+    document.getElementById('rgpd-count').textContent = count + ' enregistrements';
+}
+</script>
+</body>
+</html>

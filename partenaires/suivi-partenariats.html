@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1440">
+    <title>Suivi des partenariats — UMIH Pays Basque</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<div class="app-layout">
+    <aside class="sidebar">
+        <div class="sidebar-header"><span class="sidebar-logo">🔷</span><span class="sidebar-app-name">UMIH Pays Basque</span><span class="sidebar-chevron">▾</span></div>
+        <nav class="sidebar-nav">
+            <div class="sidebar-section">
+                <div class="sidebar-section-header"><span class="sidebar-section-icon">📊</span><span>Pilotage</span></div>
+                <a href="../pilotage/tableau-de-bord.html" class="sidebar-item">Tableau de bord</a>
+            </div>
+            <div class="sidebar-section">
+                <div class="sidebar-section-header"><span class="sidebar-section-icon">🏢</span><span>Adhérents</span></div>
+                <a href="../adherents/liste-membres.html" class="sidebar-item">Liste des membres</a>
+                <a href="../adherents/liste-prospects.html" class="sidebar-item">Liste des prospects</a>
+                <a href="../adherents/suivi-prospects.html" class="sidebar-item">Suivi des prospects</a>
+                <a href="../adherents/contacts.html" class="sidebar-item">Liste des contacts</a>
+                <a href="../adherents/suivi-adhesions.html" class="sidebar-item">Suivi des adhésions</a>
+                <a href="../adherents/rgpd.html" class="sidebar-item">RGPD</a>
+            </div>
+            <div class="sidebar-section">
+                <div class="sidebar-section-header"><span class="sidebar-section-icon">🤝</span><span>Partenaires</span></div>
+                <a href="liste-partenaires.html" class="sidebar-item">Liste des partenaires</a>
+                <a href="suivi-partenariats.html" class="sidebar-item active">Suivi des partenariats</a>
+                <a href="suivi-prospects-partenaires.html" class="sidebar-item">Suivi prospects partenaires</a>
+                <a href="contacts-partenaires.html" class="sidebar-item">Contacts partenaires</a>
+                <a href="echeances-proches.html" class="sidebar-item">Échéances proches</a>
+            </div>
+            <div class="sidebar-section">
+                <div class="sidebar-section-header"><span class="sidebar-section-icon">⚙️</span><span>Opérations</span></div>
+                <a href="../operations/todo-commercial.html" class="sidebar-item">TODO Commercial</a>
+                <a href="../operations/todo-partenaire.html" class="sidebar-item">TODO Partenaire</a>
+                <a href="../operations/todo-admin.html" class="sidebar-item">TODO Admin</a>
+                <a href="../operations/logs.html" class="sidebar-item">Suivi des logs</a>
+            </div>
+        </nav>
+        <div class="sidebar-footer"><span>👤</span><span>Partager</span></div>
+    </aside>
+
+    <main class="main-area">
+        <div class="disclaimer-banner">Interfaces à usage visuel uniquement — Aperçu non fonctionnel, données fictives</div>
+        <header class="page-header">
+            <div class="header-left">
+                <span class="breadcrumb">
+                    <a href="#" class="breadcrumb-parent">Partenaires</a>
+                    <span class="breadcrumb-sep">›</span>
+                    <span class="breadcrumb-current">Suivi des partenariats</span>
+                </span>
+            </div>
+            <div class="header-right">
+                <button class="header-btn">Filtre</button>
+                <button class="header-btn">Trier</button>
+                <button class="header-btn-icon">🔍</button>
+                <button class="header-btn">↓ Export</button>
+                <button class="btn-primary">➕ Créer un partenariat</button>
+            </div>
+        </header>
+
+        <div class="content-area content-white">
+            <div class="list-tabs">
+                <button class="list-tab active">En cours (24)</button>
+                <button class="list-tab">Historique</button>
+            </div>
+            <div class="list-table-wrapper">
+                <table class="list-table">
+                    <thead>
+                        <tr>
+                            <th class="col-checkbox"><input type="checkbox" disabled></th>
+                            <th></th>
+                            <th>Partenaire</th>
+                            <th>Date début</th>
+                            <th>Date fin</th>
+                            <th class="col-number">Montant</th>
+                            <th>Modalité</th>
+                            <th class="col-number">Montant total payé</th>
+                            <th class="col-number">Montant restant</th>
+                            <th>Statut</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="list-row" data-record-name="Groupama - 01/01/2026 → 31/12/2026" onclick="openRecord(this)">
+                            <td class="col-checkbox"><input type="checkbox" disabled onclick="event.stopPropagation()"></td>
+                            <td>🟢</td>
+                            <td class="col-primary">Groupama</td>
+                            <td>01/01/2026</td>
+                            <td>31/12/2026</td>
+                            <td class="col-number">5 000 €</td>
+                            <td><span class="badge badge-gray">1 fois</span></td>
+                            <td class="col-number">5 000 €</td>
+                            <td class="col-number">0 €</td>
+                            <td><span class="badge badge-green">✅ Payé</span></td>
+                        </tr>
+                        <tr class="list-row" data-record-name="Axa Assurances - 01/03/2026 → 28/02/2027" onclick="openRecord(this)">
+                            <td class="col-checkbox"><input type="checkbox" disabled onclick="event.stopPropagation()"></td>
+                            <td>🟢</td>
+                            <td class="col-primary">Axa Assurances</td>
+                            <td>01/03/2026</td>
+                            <td>28/02/2027</td>
+                            <td class="col-number">2 500 €</td>
+                            <td><span class="badge badge-gray">1 fois</span></td>
+                            <td class="col-number">2 500 €</td>
+                            <td class="col-number">0 €</td>
+                            <td><span class="badge badge-green">✅ Payé</span></td>
+                        </tr>
+                        <tr class="list-row" data-record-name="CCI Bayonne - 01/01/2026 → 31/12/2026" onclick="openRecord(this)">
+                            <td class="col-checkbox"><input type="checkbox" disabled onclick="event.stopPropagation()"></td>
+                            <td>🔴</td>
+                            <td class="col-primary">CCI Bayonne Pays Basque</td>
+                            <td>01/01/2026</td>
+                            <td>31/12/2026</td>
+                            <td class="col-number">4 000 €</td>
+                            <td><span class="badge badge-blue">2 fois</span></td>
+                            <td class="col-number">0 €</td>
+                            <td class="col-number">4 000 €</td>
+                            <td><span class="badge badge-red">❌ À payer</span></td>
+                        </tr>
+                        <tr class="list-row" data-record-name="Groupama - Contrat 3 ans" onclick="openRecord(this)">
+                            <td class="col-checkbox"><input type="checkbox" disabled onclick="event.stopPropagation()"></td>
+                            <td>🟠</td>
+                            <td class="col-primary">Groupama</td>
+                            <td>01/01/2024</td>
+                            <td>31/12/2026</td>
+                            <td class="col-number">15 000 €</td>
+                            <td><span class="badge badge-purple">3 fois</span></td>
+                            <td class="col-number">10 000 €</td>
+                            <td class="col-number">5 000 €</td>
+                            <td><span class="badge badge-orange">🟠 Partiel</span></td>
+                        </tr>
+                        <tr class="list-row" data-record-name="Banque Populaire - 01/02/2026 → 31/01/2027" onclick="openRecord(this)">
+                            <td class="col-checkbox"><input type="checkbox" disabled onclick="event.stopPropagation()"></td>
+                            <td>🟢</td>
+                            <td class="col-primary">Banque Populaire Aquitaine</td>
+                            <td>01/02/2026</td>
+                            <td>31/01/2027</td>
+                            <td class="col-number">3 500 €</td>
+                            <td><span class="badge badge-gray">1 fois</span></td>
+                            <td class="col-number">3 500 €</td>
+                            <td class="col-number">0 €</td>
+                            <td><span class="badge badge-green">✅ Payé</span></td>
+                        </tr>
+                        <tr class="list-row" data-record-name="Leroy Merlin - 01/01/2026 → 31/03/2026" onclick="openRecord(this)">
+                            <td class="col-checkbox"><input type="checkbox" disabled onclick="event.stopPropagation()"></td>
+                            <td>🔴</td>
+                            <td class="col-primary">Leroy Merlin Bayonne</td>
+                            <td>01/01/2026</td>
+                            <td>14/04/2026</td>
+                            <td class="col-number">800 €</td>
+                            <td><span class="badge badge-gray">1 fois</span></td>
+                            <td class="col-number">0 €</td>
+                            <td class="col-number">800 €</td>
+                            <td><span class="badge badge-red">❌ À payer</span></td>
+                        </tr>
+                        <tr class="list-row" data-record-name="Metro Bayonne - 01/03/2025 → 28/02/2026" onclick="openRecord(this)">
+                            <td class="col-checkbox"><input type="checkbox" disabled onclick="event.stopPropagation()"></td>
+                            <td>🟢</td>
+                            <td class="col-primary">Metro Cash & Carry Bayonne</td>
+                            <td>01/03/2025</td>
+                            <td>28/02/2026</td>
+                            <td class="col-number">1 200 €</td>
+                            <td><span class="badge badge-gray">1 fois</span></td>
+                            <td class="col-number">1 200 €</td>
+                            <td class="col-number">0 €</td>
+                            <td><span class="badge badge-green">✅ Payé</span></td>
+                        </tr>
+                        <tr class="list-row" data-record-name="OFB Conseil - 01/04/2025 → 22/03/2026" onclick="openRecord(this)">
+                            <td class="col-checkbox"><input type="checkbox" disabled onclick="event.stopPropagation()"></td>
+                            <td>🟢</td>
+                            <td class="col-primary">OFB Conseil</td>
+                            <td>01/04/2025</td>
+                            <td>22/03/2026</td>
+                            <td class="col-number">1 500 €</td>
+                            <td><span class="badge badge-blue">2 fois</span></td>
+                            <td class="col-number">1 500 €</td>
+                            <td class="col-number">0 €</td>
+                            <td><span class="badge badge-green">✅ Payé</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="list-footer">
+                <span class="list-count">24 enregistrements</span>
+                <div class="list-footer-totals">
+                    <div class="list-footer-total">
+                        <span class="list-footer-total-label">Total Montant :</span>
+                        <span class="list-footer-total-value">38 200 €</span>
+                    </div>
+                    <div class="list-footer-total">
+                        <span class="list-footer-total-label">Total Montant total payé :</span>
+                        <span class="list-footer-total-value">24 200 €</span>
+                    </div>
+                    <div class="list-footer-total">
+                        <span class="list-footer-total-label">Total Montant restant :</span>
+                        <span class="list-footer-total-value">14 000 €</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+<!-- FICHE LATERALE -->
+<div class="detail-panel" id="detail-panel">
+    <div class="detail-panel-header">
+        <h3 class="detail-panel-title" id="detail-panel-title">Groupama - 01/01/2026 → 31/12/2026</h3>
+        <div class="detail-panel-actions">
+            <button class="detail-panel-expand">⤢</button>
+            <button class="detail-panel-close" onclick="closeDetailPanel()">✕</button>
+        </div>
+    </div>
+    <div class="detail-panel-body">
+        <div class="detail-section">
+            <h4 class="detail-section-title">Informations générales</h4>
+            <div class="detail-field"><div class="detail-field-label">Partenaire lié</div><div class="detail-field-value"><span class="detail-linked-record" onclick="openSubPanel('partenaire','Groupama')">Groupama</span></div></div>
+            <div class="detail-field"><div class="detail-field-label">Date de début</div><div class="detail-field-value"><div class="field-text" onclick="editText(this)"><span class="field-text-display">01/01/2026</span><input class="field-text-input" type="date" value="2026-01-01" style="display:none" onblur="saveText(this)"></div></div></div>
+            <div class="detail-field"><div class="detail-field-label">Date de fin</div><div class="detail-field-value"><div class="field-text" onclick="editText(this)"><span class="field-text-display">31/12/2026</span><input class="field-text-input" type="date" value="2026-12-31" style="display:none" onblur="saveText(this)"></div></div></div>
+        </div>
+        <div class="detail-section">
+            <h4 class="detail-section-title">Paiement</h4>
+            <div class="detail-field"><div class="detail-field-label">Montant</div><div class="detail-field-value"><div class="field-text" onclick="editText(this)"><span class="field-text-display">5 000 €</span><input class="field-text-input" type="number" value="5000" style="display:none" onblur="saveText(this)" onkeydown="if(event.key==='Enter') this.blur()"></div></div></div>
+            <div class="detail-field"><div class="detail-field-label">Modalité de paiement</div>
+                <div class="detail-field-value">
+                    <div class="field-select" data-field="modalite">
+                        <div class="field-select-value" onclick="toggleSelect(this)"><span class="badge badge-gray" id="val-modalite">1 fois</span><span class="field-select-arrow">▾</span></div>
+                        <div class="field-select-dropdown" id="dropdown-modalite">
+                            <div class="field-select-option selected" data-badge-class="badge-gray" onclick="selectOption(this,'modalite')">1 fois</div>
+                            <div class="field-select-option" data-badge-class="badge-blue" onclick="selectOption(this,'modalite')">2 fois</div>
+                            <div class="field-select-option" data-badge-class="badge-purple" onclick="selectOption(this,'modalite')">3 fois</div>
+                            <div class="field-select-option" data-badge-class="badge-teal" onclick="selectOption(this,'modalite')">4 fois</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="detail-field"><div class="detail-field-label">Montant payé 1</div><div class="detail-field-value"><div class="field-text" onclick="editText(this)"><span class="field-text-display">5 000 €</span><input class="field-text-input" type="number" value="5000" style="display:none" onblur="saveText(this)" onkeydown="if(event.key==='Enter') this.blur()"></div></div></div>
+            <div class="detail-field"><div class="detail-field-label">Date de paiement 1</div><div class="detail-field-value"><div class="field-text" onclick="editText(this)"><span class="field-text-display">15/01/2026</span><input class="field-text-input" type="date" value="2026-01-15" style="display:none" onblur="saveText(this)"></div></div></div>
+            <div class="detail-field"><div class="detail-field-label">Montant payé 2</div><div class="detail-field-value"><div class="field-text" onclick="editText(this)"><span class="field-text-display">—</span><input class="field-text-input" type="number" value="" style="display:none" onblur="saveText(this)" onkeydown="if(event.key==='Enter') this.blur()"></div></div></div>
+            <div class="detail-field"><div class="detail-field-label">Date de paiement 2</div><div class="detail-field-value"><div class="field-text" onclick="editText(this)"><span class="field-text-display">—</span><input class="field-text-input" type="date" value="" style="display:none" onblur="saveText(this)"></div></div></div>
+            <div class="detail-field"><div class="detail-field-label">Montant payé 3</div><div class="detail-field-value"><div class="field-text" onclick="editText(this)"><span class="field-text-display">—</span><input class="field-text-input" type="number" value="" style="display:none" onblur="saveText(this)" onkeydown="if(event.key==='Enter') this.blur()"></div></div></div>
+            <div class="detail-field"><div class="detail-field-label">Date de paiement 3</div><div class="detail-field-value"><div class="field-text" onclick="editText(this)"><span class="field-text-display">—</span><input class="field-text-input" type="date" value="" style="display:none" onblur="saveText(this)"></div></div></div>
+            <div class="detail-field"><div class="detail-field-label">Montant payé 4</div><div class="detail-field-value"><div class="field-text" onclick="editText(this)"><span class="field-text-display">—</span><input class="field-text-input" type="number" value="" style="display:none" onblur="saveText(this)" onkeydown="if(event.key==='Enter') this.blur()"></div></div></div>
+            <div class="detail-field"><div class="detail-field-label">Date de paiement 4</div><div class="detail-field-value"><div class="field-text" onclick="editText(this)"><span class="field-text-display">—</span><input class="field-text-input" type="date" value="" style="display:none" onblur="saveText(this)"></div></div></div>
+            <div class="detail-field"><div class="detail-field-label">Montant total payé (calculé)</div><div class="detail-field-value" style="font-weight:600;">5 000 €</div></div>
+            <div class="detail-field"><div class="detail-field-label">Montant restant (calculé)</div><div class="detail-field-value" style="font-weight:600;">0 €</div></div>
+            <div class="detail-field"><div class="detail-field-label">Statut (calculé)</div><div class="detail-field-value"><span class="badge badge-green">✅ Payé</span></div></div>
+        </div>
+        <div class="detail-section">
+            <h4 class="detail-section-title">Notes</h4>
+            <div class="detail-field"><div class="detail-field-label">Notes et commentaires</div>
+                <div class="detail-field-value"><div class="field-textarea" onclick="editTextarea(this)"><div class="field-textarea-display">Contrat annuel. Inclut logo sur site UMIH, mention dans newsletter x4/an, stand lors de la soirée annuelle.</div><textarea class="field-textarea-input" style="display:none" onblur="saveTextarea(this)" rows="3">Contrat annuel. Inclut logo sur site UMIH, mention dans newsletter x4/an, stand lors de la soirée annuelle.</textarea></div></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SOUS-PANNEAU — Fiche élément lié -->
+<div class="sub-panel" id="sub-panel">
+    <div class="detail-panel-header">
+        <h3 class="detail-panel-title" id="sub-panel-title">—</h3>
+        <div class="detail-panel-actions">
+            <button class="detail-panel-close" onclick="closeSubPanel()">✕</button>
+        </div>
+    </div>
+    <div class="detail-panel-body" id="sub-panel-body"></div>
+</div>
+
+<script>
+function openRecord(el) { const name = el.getAttribute('data-record-name') || '—'; document.getElementById('detail-panel-title').textContent = name; document.getElementById('detail-panel').classList.add('open'); closeSubPanel(); }
+function closeDetailPanel() { document.getElementById('detail-panel').classList.remove('open'); closeSubPanel(); }
+document.addEventListener('keydown', e => { if (e.key === 'Escape') { var sp = document.getElementById('sub-panel'); if (sp && sp.classList.contains('open')) { closeSubPanel(); } else { closeDetailPanel(); } } });
+document.querySelectorAll('.list-tab').forEach(tab => { tab.addEventListener('click', function() { document.querySelectorAll('.list-tab').forEach(t => t.classList.remove('active')); this.classList.add('active'); }); });
+function editText(wrapper) { const display = wrapper.querySelector('.field-text-display'); const input = wrapper.querySelector('.field-text-input'); if (!input) return; display.style.display = 'none'; input.style.display = 'block'; input.focus(); wrapper.style.borderColor = '#166ee1'; }
+function saveText(input) { const wrapper = input.closest('.field-text'); const display = wrapper.querySelector('.field-text-display'); display.textContent = input.value || '—'; display.style.display = 'block'; input.style.display = 'none'; wrapper.style.borderColor = 'transparent'; }
+function editTextarea(wrapper) { const display = wrapper.querySelector('.field-textarea-display'); const input = wrapper.querySelector('.field-textarea-input'); if (!input) return; display.style.display = 'none'; input.style.display = 'block'; input.focus(); }
+function saveTextarea(input) { const wrapper = input.closest('.field-textarea'); const display = wrapper.querySelector('.field-textarea-display'); display.textContent = input.value || '—'; display.style.display = 'block'; input.style.display = 'none'; }
+function toggleSelect(trigger) { const dropdown = trigger.nextElementSibling; const isOpen = dropdown.classList.contains('open'); document.querySelectorAll('.field-select-dropdown.open').forEach(d => d.classList.remove('open')); if (!isOpen) dropdown.classList.add('open'); }
+function selectOption(option, fieldName) { const text = option.textContent.trim(); const badgeClass = option.getAttribute('data-badge-class') || 'badge-gray'; const valueEl = document.getElementById('val-' + fieldName); if (valueEl) { valueEl.textContent = text; valueEl.className = 'badge ' + badgeClass; } option.closest('.field-select-dropdown').classList.remove('open'); }
+document.addEventListener('click', function(e) { if (!e.target.closest('.field-select')) { document.querySelectorAll('.field-select-dropdown.open').forEach(d => d.classList.remove('open')); } });
+
+// ── Sous-panneau latéral ──
+var subPanelData = {
+    partenaire: {
+        'Groupama': {
+            nom: 'Groupama', type: 'Partenaire renouvelé', typeClass: 'badge-teal',
+            categorie: 'Premium', categorieClass: 'badge-purple',
+            activite: 'Service', provenance: 'Déjà dans la base', provenanceClass: 'badge-blue',
+            email: 'contact.basque@groupama.fr', telephone: '05 59 46 10 00', presenceSite: true,
+            date1erPartenariat: '15/03/2019', dateFinDernier: '31/12/2026 (+274 j)',
+            actions: [
+                { titre: 'Newsletter - 15/02/2026 - Groupama', type: 'Newsletter', typeClass: 'badge-blue', date: '15/02/2026' },
+                { titre: 'Post Facebook - 20/01/2026 - Groupama', type: 'Post Facebook', typeClass: 'badge-purple', date: '20/01/2026' },
+                { titre: 'Mailing - 10/12/2025 - Groupama', type: 'Mailing', typeClass: 'badge-teal', date: '10/12/2025' }
+            ],
+            partenariats: [
+                { titre: 'Groupama - 01/01/2026 → 31/12/2026', montant: '15 000 €', paye: '15 000 €', statut: '✅ Payé', statutClass: 'badge-green' },
+                { titre: 'Groupama - 01/01/2025 → 31/12/2025', montant: '12 000 €', paye: '12 000 €', statut: '✅ Payé', statutClass: 'badge-green' }
+            ],
+            contacts: ['Marc Dubreuil']
+        },
+        'Axa Assurances': {
+            nom: 'Axa Assurances', type: 'Partenaire', typeClass: 'badge-green',
+            categorie: 'Intermédiaire', categorieClass: 'badge-blue',
+            activite: 'Service', provenance: 'Déjà dans la base', provenanceClass: 'badge-blue',
+            email: 'pro.bayonne@axa.fr', telephone: '05 59 55 20 30', presenceSite: true,
+            date1erPartenariat: '01/06/2021', dateFinDernier: '28/02/2027 (+156 j)',
+            actions: [],
+            partenariats: [
+                { titre: 'Axa - 01/03/2026 → 28/02/2027', montant: '2 500 €', paye: '2 500 €', statut: '✅ Payé', statutClass: 'badge-green' }
+            ],
+            contacts: []
+        },
+        'CCI Bayonne Pays Basque': {
+            nom: 'CCI Bayonne Pays Basque', type: 'Partenaire renouvelé', typeClass: 'badge-teal',
+            categorie: 'Premium', categorieClass: 'badge-purple',
+            activite: 'Service', provenance: 'Déjà dans la base', provenanceClass: 'badge-blue',
+            email: 'contact@cci64.fr', telephone: '05 59 46 57 00', presenceSite: true,
+            date1erPartenariat: '10/01/2018', dateFinDernier: '31/12/2026 (+312 j)',
+            actions: [],
+            partenariats: [
+                { titre: 'CCI - 01/01/2026 → 31/12/2026', montant: '4 000 €', paye: '0 €', statut: '❌ À payer', statutClass: 'badge-red' }
+            ],
+            contacts: []
+        },
+        'Leroy Merlin Bayonne': {
+            nom: 'Leroy Merlin Bayonne', type: 'Partenaire', typeClass: 'badge-green',
+            categorie: 'Standard', categorieClass: 'badge-gray',
+            activite: 'Service', provenance: 'Déjà dans la base', provenanceClass: 'badge-blue',
+            email: 'bayonne@leroymerlin.fr', telephone: '05 59 64 18 18', presenceSite: false,
+            date1erPartenariat: '15/09/2024', dateFinDernier: '14/04/2026 (+42 j)',
+            actions: [],
+            partenariats: [
+                { titre: 'Leroy Merlin - 01/01/2026 → 14/04/2026', montant: '800 €', paye: '0 €', statut: '❌ À payer', statutClass: 'badge-red' }
+            ],
+            contacts: []
+        },
+        'Banque Populaire Aquitaine': {
+            nom: 'Banque Populaire Aquitaine', type: 'Partenaire renouvelé', typeClass: 'badge-teal',
+            categorie: 'Premium', categorieClass: 'badge-purple',
+            activite: 'Service', provenance: 'Déjà dans la base', provenanceClass: 'badge-blue',
+            email: 'pro.bayonne@bpaquitaine.fr', telephone: '05 59 64 80 80', presenceSite: true,
+            date1erPartenariat: '01/02/2020', dateFinDernier: '31/01/2027 (+245 j)',
+            actions: [],
+            partenariats: [
+                { titre: 'BP - 01/02/2026 → 31/01/2027', montant: '3 500 €', paye: '3 500 €', statut: '✅ Payé', statutClass: 'badge-green' }
+            ],
+            contacts: []
+        },
+        'OFB Conseil': {
+            nom: 'OFB Conseil', type: 'Partenaire', typeClass: 'badge-green',
+            categorie: 'Intermédiaire', categorieClass: 'badge-blue',
+            activite: 'Service', provenance: 'Déjà dans la base', provenanceClass: 'badge-blue',
+            email: 'contact@ofbconseil.fr', telephone: '05 59 22 33 44', presenceSite: true,
+            date1erPartenariat: '01/04/2024', dateFinDernier: '22/03/2026 (+18 j)',
+            actions: [],
+            partenariats: [
+                { titre: 'OFB - 01/04/2025 → 22/03/2026', montant: '1 500 €', paye: '1 500 €', statut: '✅ Payé', statutClass: 'badge-green' }
+            ],
+            contacts: []
+        },
+        'Metro Cash & Carry Bayonne': {
+            nom: 'Metro Cash & Carry Bayonne', type: 'Partenaire', typeClass: 'badge-green',
+            categorie: 'Standard', categorieClass: 'badge-gray',
+            activite: 'Service', provenance: 'Déjà dans la base', provenanceClass: 'badge-blue',
+            email: 'bayonne.pro@metro.fr', telephone: '05 59 52 86 00', presenceSite: false,
+            date1erPartenariat: '01/03/2023', dateFinDernier: '28/02/2026 (+67 j)',
+            actions: [],
+            partenariats: [
+                { titre: 'Metro - 01/03/2025 → 28/02/2026', montant: '1 200 €', paye: '1 200 €', statut: '✅ Payé', statutClass: 'badge-green' }
+            ],
+            contacts: []
+        },
+        'Coca-Cola HBC France': {
+            nom: 'Coca-Cola HBC France', type: 'Partenaire renouvelé', typeClass: 'badge-teal',
+            categorie: 'Premium', categorieClass: 'badge-purple',
+            activite: 'Industrie', provenance: 'Déjà dans la base', provenanceClass: 'badge-blue',
+            email: 'partenariats@cocacola.fr', telephone: '01 47 43 47 43', presenceSite: true,
+            date1erPartenariat: '01/01/2020', dateFinDernier: '31/12/2026 (+198 j)',
+            actions: [],
+            partenariats: [],
+            contacts: []
+        }
+    }
+};
+function buildPartenairePanel(data) {
+    var actionCards = data.actions.map(function(a) {
+        return '<div class="linked-card"><div class="linked-card-title">' + a.titre + '</div><div class="linked-card-fields">' +
+            '<div class="linked-card-field"><span class="linked-card-field-label">Type : </span><span class="linked-card-field-value"><span class="badge ' + a.typeClass + '">' + a.type + '</span></span></div>' +
+            '<div class="linked-card-field"><span class="linked-card-field-label">Date : </span><span class="linked-card-field-value">' + a.date + '</span></div></div></div>';
+    }).join('');
+    var partCards = data.partenariats.map(function(p) {
+        return '<div class="linked-card"><div class="linked-card-title">' + p.titre + '</div><div class="linked-card-fields">' +
+            '<div class="linked-card-field"><span class="linked-card-field-label">Montant : </span><span class="linked-card-field-value">' + p.montant + '</span></div>' +
+            '<div class="linked-card-field"><span class="linked-card-field-label">Payé : </span><span class="linked-card-field-value">' + p.paye + '</span></div>' +
+            '<div class="linked-card-field linked-card-status"><span class="badge ' + p.statutClass + '">' + p.statut + '</span></div></div></div>';
+    }).join('');
+    var contactLinks = data.contacts.map(function(c) { return '<span class="detail-linked-record">' + c + '</span>'; }).join(' ');
+    return '<div class="detail-section"><h4 class="detail-section-title">Informations générales</h4>' +
+        '<div class="detail-field"><div class="detail-field-label">Nom de l\'entreprise</div><div class="detail-field-value">' + data.nom + '</div></div>' +
+        '<div class="detail-field"><div class="detail-field-label">Type</div><div class="detail-field-value"><span class="badge ' + data.typeClass + '">' + data.type + '</span></div></div>' +
+        '<div class="detail-field"><div class="detail-field-label">Catégorie</div><div class="detail-field-value"><span class="badge ' + data.categorieClass + '">' + data.categorie + '</span></div></div>' +
+        '<div class="detail-field"><div class="detail-field-label">Activité</div><div class="detail-field-value"><span class="badge badge-blue">' + data.activite + '</span></div></div>' +
+        '<div class="detail-field"><div class="detail-field-label">Provenance</div><div class="detail-field-value"><span class="badge ' + data.provenanceClass + '">' + data.provenance + '</span></div></div></div>' +
+        '<div class="detail-section"><h4 class="detail-section-title">Coordonnées</h4>' +
+        '<div class="detail-field"><div class="detail-field-label">Email générique</div><div class="detail-field-value"><span class="col-email">' + data.email + '</span></div></div>' +
+        '<div class="detail-field"><div class="detail-field-label">Téléphone</div><div class="detail-field-value">' + data.telephone + '</div></div>' +
+        '<div class="detail-field"><div class="detail-field-label">Présence sur le site</div><div class="detail-field-value">' + (data.presenceSite ? '☑ Affiché sur le site UMIH' : '☐ Affiché sur le site UMIH') + '</div></div></div>' +
+        '<div class="detail-section"><h4 class="detail-section-title">Gestion du partenariat</h4>' +
+        '<div class="detail-field"><div class="detail-field-label">Date 1er partenariat</div><div class="detail-field-value">' + data.date1erPartenariat + '</div></div>' +
+        '<div class="detail-field"><div class="detail-field-label">Date fin dernier partenariat (lookup)</div><div class="detail-field-value" style="color:#166534;">' + data.dateFinDernier + '</div></div></div>' +
+        '<div class="detail-section"><h4 class="detail-section-title">Actions</h4>' +
+        (actionCards ? '<div class="linked-cards">' + actionCards + '</div>' : '<div style="color:#999;font-size:13px;">Aucune action</div>') + '</div>' +
+        '<div class="detail-section"><h4 class="detail-section-title">Partenariats</h4>' +
+        (partCards ? '<div class="linked-cards">' + partCards + '</div>' : '<div style="color:#999;font-size:13px;">Aucun partenariat</div>') + '</div>' +
+        '<div class="detail-section"><h4 class="detail-section-title">Relations</h4>' +
+        '<div class="detail-field"><div class="detail-field-label">Contacts liés</div><div class="detail-field-value"><div class="field-linked-records">' + (contactLinks || '<span style="color:#999;">—</span>') + '</div></div></div></div>';
+}
+function openSubPanel(type, name) {
+    var data = subPanelData[type] && subPanelData[type][name];
+    if (!data) return;
+    document.getElementById('sub-panel-title').textContent = name;
+    document.getElementById('sub-panel-body').innerHTML = buildPartenairePanel(data);
+    document.getElementById('sub-panel').classList.add('open');
+}
+function closeSubPanel() { document.getElementById('sub-panel').classList.remove('open'); }
+</script>
+</body>
+</html>

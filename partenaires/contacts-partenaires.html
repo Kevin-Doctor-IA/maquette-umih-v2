@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1440">
+    <title>Contacts partenaires — UMIH Pays Basque</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<div class="app-layout">
+    <aside class="sidebar">
+        <div class="sidebar-header"><span class="sidebar-logo">🔷</span><span class="sidebar-app-name">UMIH Pays Basque</span><span class="sidebar-chevron">▾</span></div>
+        <nav class="sidebar-nav">
+            <div class="sidebar-section">
+                <div class="sidebar-section-header"><span class="sidebar-section-icon">📊</span><span>Pilotage</span></div>
+                <a href="../pilotage/tableau-de-bord.html" class="sidebar-item">Tableau de bord</a>
+            </div>
+            <div class="sidebar-section">
+                <div class="sidebar-section-header"><span class="sidebar-section-icon">🏢</span><span>Adhérents</span></div>
+                <a href="../adherents/liste-membres.html" class="sidebar-item">Liste des membres</a>
+                <a href="../adherents/liste-prospects.html" class="sidebar-item">Liste des prospects</a>
+                <a href="../adherents/suivi-prospects.html" class="sidebar-item">Suivi des prospects</a>
+                <a href="../adherents/contacts.html" class="sidebar-item">Liste des contacts</a>
+                <a href="../adherents/suivi-adhesions.html" class="sidebar-item">Suivi des adhésions</a>
+                <a href="../adherents/rgpd.html" class="sidebar-item">RGPD</a>
+            </div>
+            <div class="sidebar-section">
+                <div class="sidebar-section-header"><span class="sidebar-section-icon">🤝</span><span>Partenaires</span></div>
+                <a href="liste-partenaires.html" class="sidebar-item">Liste des partenaires</a>
+                <a href="suivi-partenariats.html" class="sidebar-item">Suivi des partenariats</a>
+                <a href="suivi-prospects-partenaires.html" class="sidebar-item">Suivi prospects partenaires</a>
+                <a href="contacts-partenaires.html" class="sidebar-item active">Contacts partenaires</a>
+                <a href="echeances-proches.html" class="sidebar-item">Échéances proches</a>
+            </div>
+            <div class="sidebar-section">
+                <div class="sidebar-section-header"><span class="sidebar-section-icon">⚙️</span><span>Opérations</span></div>
+                <a href="../operations/todo-commercial.html" class="sidebar-item">TODO Commercial</a>
+                <a href="../operations/todo-partenaire.html" class="sidebar-item">TODO Partenaire</a>
+                <a href="../operations/todo-admin.html" class="sidebar-item">TODO Admin</a>
+                <a href="../operations/logs.html" class="sidebar-item">Suivi des logs</a>
+            </div>
+        </nav>
+        <div class="sidebar-footer"><span>👤</span><span>Partager</span></div>
+    </aside>
+
+    <main class="main-area">
+        <div class="disclaimer-banner">Interfaces à usage visuel uniquement — Aperçu non fonctionnel, données fictives</div>
+        <header class="page-header">
+            <div class="header-left">
+                <span class="breadcrumb">
+                    <a href="#" class="breadcrumb-parent">Partenaires</a>
+                    <span class="breadcrumb-sep">›</span>
+                    <span class="breadcrumb-current">Contacts partenaires</span>
+                </span>
+            </div>
+            <div class="header-right">
+                <button class="header-btn">Filtre</button>
+                <button class="header-btn">Trier</button>
+                <button class="header-btn-icon">🔍</button>
+                <button class="header-btn">↓ Export</button>
+                <button class="btn-primary">➕ Ajouter un contact</button>
+            </div>
+        </header>
+
+        <div class="content-area content-white">
+            <div class="list-tabs">
+                <button class="list-tab active">Tous les contacts (12)</button>
+            </div>
+            <div class="list-table-wrapper">
+                <table class="list-table">
+                    <thead>
+                        <tr>
+                            <th class="col-checkbox"><input type="checkbox" disabled></th>
+                            <th>Nom</th>
+                            <th>Prénom</th>
+                            <th>Fonction</th>
+                            <th>Partenaire lié</th>
+                            <th>Email</th>
+                            <th>Téléphone</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="list-row" data-record-name="Lacoste Marie" onclick="openRecord(this)">
+                            <td class="col-checkbox"><input type="checkbox" disabled onclick="event.stopPropagation()"></td>
+                            <td class="col-primary">Lacoste</td>
+                            <td>Marie</td>
+                            <td><span class="badge badge-blue">Directrice commerciale</span></td>
+                            <td><span class="detail-linked-record">Assurance Lacoste</span></td>
+                            <td class="col-email">m.lacoste@assurance-lacoste.fr</td>
+                            <td class="col-phone">06 12 45 67 89</td>
+                        </tr>
+                        <tr class="list-row" data-record-name="Etcheverry Paul" onclick="openRecord(this)">
+                            <td class="col-checkbox"><input type="checkbox" disabled onclick="event.stopPropagation()"></td>
+                            <td class="col-primary">Etcheverry</td>
+                            <td>Paul</td>
+                            <td><span class="badge badge-orange">Responsable partenariats</span></td>
+                            <td><span class="detail-linked-record">Banque Populaire</span></td>
+                            <td class="col-email">p.etcheverry@bpaca.fr</td>
+                            <td class="col-phone">06 98 76 54 32</td>
+                        </tr>
+                        <tr class="list-row" data-record-name="Bidart Jean" onclick="openRecord(this)">
+                            <td class="col-checkbox"><input type="checkbox" disabled onclick="event.stopPropagation()"></td>
+                            <td class="col-primary">Bidart</td>
+                            <td>Jean</td>
+                            <td><span class="badge badge-green">Gérant</span></td>
+                            <td><span class="detail-linked-record">Fournisseur Bidart</span></td>
+                            <td class="col-email">j.bidart@fournisseur-bidart.fr</td>
+                            <td class="col-phone">06 55 44 33 22</td>
+                        </tr>
+                        <tr class="list-row" data-record-name="Leroy Anne" onclick="openRecord(this)">
+                            <td class="col-checkbox"><input type="checkbox" disabled onclick="event.stopPropagation()"></td>
+                            <td class="col-primary">Leroy</td>
+                            <td>Anne</td>
+                            <td><span class="badge badge-purple">Expert-comptable</span></td>
+                            <td><span class="detail-linked-record">Cabinet Leroy</span></td>
+                            <td class="col-email">a.leroy@cabinet-leroy.fr</td>
+                            <td class="col-phone">05 59 44 55 66</td>
+                        </tr>
+                        <tr class="list-row" data-record-name="Garmendia Xabi" onclick="openRecord(this)">
+                            <td class="col-checkbox"><input type="checkbox" disabled onclick="event.stopPropagation()"></td>
+                            <td class="col-primary">Garmendia</td>
+                            <td>Xabi</td>
+                            <td><span class="badge badge-teal">Commercial</span></td>
+                            <td><span class="detail-linked-record">Metro Cash & Carry</span></td>
+                            <td class="col-email">x.garmendia@metro.fr</td>
+                            <td class="col-phone">06 33 22 11 00</td>
+                        </tr>
+                        <tr class="list-row" data-record-name="Dumont Claire" onclick="openRecord(this)">
+                            <td class="col-checkbox"><input type="checkbox" disabled onclick="event.stopPropagation()"></td>
+                            <td class="col-primary">Dumont</td>
+                            <td>Claire</td>
+                            <td><span class="badge badge-blue">Directrice régionale</span></td>
+                            <td><span class="detail-linked-record">SACEM</span></td>
+                            <td class="col-email">c.dumont@sacem.fr</td>
+                            <td class="col-phone">06 77 88 99 00</td>
+                        </tr>
+                        <tr class="list-row" data-record-name="Ospital Maite" onclick="openRecord(this)">
+                            <td class="col-checkbox"><input type="checkbox" disabled onclick="event.stopPropagation()"></td>
+                            <td class="col-primary">Ospital</td>
+                            <td>Maite</td>
+                            <td><span class="badge badge-orange">Chargée de compte</span></td>
+                            <td><span class="detail-linked-record">AXA Professionnels</span></td>
+                            <td class="col-email">m.ospital@axa.fr</td>
+                            <td class="col-phone">05 59 30 22 11</td>
+                        </tr>
+                        <tr class="list-row" data-record-name="Iturria Peio" onclick="openRecord(this)">
+                            <td class="col-checkbox"><input type="checkbox" disabled onclick="event.stopPropagation()"></td>
+                            <td class="col-primary">Iturria</td>
+                            <td>Peio</td>
+                            <td><span class="badge badge-green">Gérant</span></td>
+                            <td><span class="detail-linked-record">Linge Pro Pays Basque</span></td>
+                            <td class="col-email">p.iturria@lingepro64.fr</td>
+                            <td class="col-phone">06 22 33 44 55</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="list-footer"><span class="list-count">8 enregistrements affichés (12 total)</span></div>
+        </div>
+    </main>
+</div>
+
+<!-- FICHE LATERALE -->
+<div class="detail-panel" id="detail-panel">
+    <div class="detail-panel-header">
+        <h3 class="detail-panel-title" id="detail-panel-title">Marie Lacoste</h3>
+        <div class="detail-panel-actions">
+            <button class="detail-panel-expand">⤢</button>
+            <button class="detail-panel-close" onclick="closeDetailPanel()">✕</button>
+        </div>
+    </div>
+    <div class="detail-panel-body">
+        <div class="detail-section">
+            <h4 class="detail-section-title">Informations personnelles</h4>
+            <div class="detail-field"><div class="detail-field-label">Nom</div><div class="detail-field-value"><div class="field-text" onclick="editText(this)"><span class="field-text-display">Lacoste</span><input class="field-text-input" type="text" value="Lacoste" style="display:none" onblur="saveText(this)" onkeydown="if(event.key==='Enter') this.blur()"></div></div></div>
+            <div class="detail-field"><div class="detail-field-label">Prénom</div><div class="detail-field-value"><div class="field-text" onclick="editText(this)"><span class="field-text-display">Marie</span><input class="field-text-input" type="text" value="Marie" style="display:none" onblur="saveText(this)" onkeydown="if(event.key==='Enter') this.blur()"></div></div></div>
+        </div>
+        <div class="detail-section">
+            <h4 class="detail-section-title">Coordonnées</h4>
+            <div class="detail-field"><div class="detail-field-label">Email</div><div class="detail-field-value"><div class="field-text" onclick="editText(this)"><span class="field-text-display col-email">m.lacoste@assurance-lacoste.fr</span><input class="field-text-input" type="email" value="m.lacoste@assurance-lacoste.fr" style="display:none" onblur="saveText(this)" onkeydown="if(event.key==='Enter') this.blur()"></div></div></div>
+            <div class="detail-field"><div class="detail-field-label">Téléphone</div><div class="detail-field-value"><div class="field-text" onclick="editText(this)"><span class="field-text-display">06 12 45 67 89</span><input class="field-text-input" type="text" value="06 12 45 67 89" style="display:none" onblur="saveText(this)" onkeydown="if(event.key==='Enter') this.blur()"></div></div></div>
+        </div>
+        <div class="detail-section">
+            <h4 class="detail-section-title">Fonction</h4>
+            <div class="detail-field"><div class="detail-field-label">Fonction</div><div class="detail-field-value"><span class="badge badge-blue">Directrice commerciale</span></div></div>
+        </div>
+        <div class="detail-section">
+            <h4 class="detail-section-title">Relations</h4>
+            <div class="detail-field"><div class="detail-field-label">Partenaire lié</div>
+                <div class="detail-field-value">
+                    <div class="field-linked-records">
+                        <span class="detail-linked-record">Assurance Lacoste</span>
+                        <button class="field-add-link" onclick="alert('Fonctionnalité disponible dans Airtable')">＋ Ajouter</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="detail-section">
+            <h4 class="detail-section-title">Notes</h4>
+            <div class="detail-field"><div class="detail-field-label">Notes et commentaires</div>
+                <div class="detail-field-value"><div class="field-textarea" onclick="editTextarea(this)"><div class="field-textarea-display">Interlocutrice principale pour le renouvellement du partenariat Premium. Très réactive par email.</div><textarea class="field-textarea-input" style="display:none" onblur="saveTextarea(this)" rows="3">Interlocutrice principale pour le renouvellement du partenariat Premium. Très réactive par email.</textarea></div></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+function openRecord(el) { const name = el.getAttribute('data-record-name') || '—'; document.getElementById('detail-panel-title').textContent = name; document.getElementById('detail-panel').classList.add('open'); }
+function closeDetailPanel() { document.getElementById('detail-panel').classList.remove('open'); }
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDetailPanel(); });
+function editText(wrapper) { const display = wrapper.querySelector('.field-text-display'); const input = wrapper.querySelector('.field-text-input'); if (!input) return; display.style.display = 'none'; input.style.display = 'block'; input.focus(); wrapper.style.borderColor = '#166ee1'; }
+function saveText(input) { const wrapper = input.closest('.field-text'); const display = wrapper.querySelector('.field-text-display'); display.textContent = input.value || '—'; display.style.display = 'block'; input.style.display = 'none'; wrapper.style.borderColor = 'transparent'; }
+function editTextarea(wrapper) { const display = wrapper.querySelector('.field-textarea-display'); const input = wrapper.querySelector('.field-textarea-input'); if (!input) return; display.style.display = 'none'; input.style.display = 'block'; input.focus(); }
+function saveTextarea(input) { const wrapper = input.closest('.field-textarea'); const display = wrapper.querySelector('.field-textarea-display'); display.textContent = input.value || '—'; display.style.display = 'block'; input.style.display = 'none'; }
+</script>
+</body>
+</html>

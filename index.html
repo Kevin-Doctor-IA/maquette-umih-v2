@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1440">
+    <title>Maquettes Airtable — UMIH Pays Basque</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body { background: #f5f5f5; }
+        .index-page { max-width: 1100px; margin: 0 auto; padding: 0 24px 64px; }
+        .index-header {
+            background: #3B6BA3; color: #fff;
+            padding: 24px 48px;
+            display: flex; align-items: center; gap: 16px;
+            margin-bottom: 48px;
+        }
+        .index-header-logo { font-size: 32px; }
+        .index-header-title { font-size: 22px; font-weight: 700; }
+        .index-header-subtitle { font-size: 13px; opacity: 0.7; margin-top: 2px; }
+        .index-intro {
+            background: #fff; border: 1px solid #e5e5e5; border-radius: 8px;
+            padding: 20px 24px; margin-bottom: 32px;
+            display: flex; gap: 12px; align-items: flex-start;
+        }
+        .index-intro-icon { font-size: 24px; flex-shrink: 0; }
+        .index-intro-text h3 { font-size: 14px; font-weight: 600; color: #333; margin-bottom: 4px; }
+        .index-intro-text p { font-size: 13px; color: #666; line-height: 1.5; }
+    </style>
+</head>
+<body>
+    <div class="index-header">
+        <div class="index-header-logo">🔷</div>
+        <div>
+            <div class="index-header-title">UMIH Pays Basque — Maquettes Airtable</div>
+            <div class="index-header-subtitle">Prototype interactif · 16 interfaces · Version 3.0</div>
+        </div>
+    </div>
+
+    <div class="index-page">
+        <div class="index-intro">
+            <div class="index-intro-icon">💡</div>
+            <div class="index-intro-text">
+                <h3>Comment naviguer dans les maquettes</h3>
+                <p>Cliquez sur une interface ci-dessous pour la visualiser. Dans chaque interface, cliquez sur une ligne ou une carte pour ouvrir la fiche détail. Les onglets sont fonctionnels. Appuyez sur <strong>Échap</strong> ou cliquez sur ✕ pour fermer une fiche.</p>
+            </div>
+        </div>
+
+        <div class="index-sections">
+            <!-- PILOTAGE -->
+            <div>
+                <div class="index-section-title">📊 Pilotage</div>
+                <div class="index-tiles">
+                    <a href="pilotage/tableau-de-bord.html" class="index-tile">
+                        <div class="index-tile-icon">📊</div>
+                        <div class="index-tile-name">Tableau de bord</div>
+                        <div class="index-tile-desc">KPIs adhérents, graphiques par activité et zone, suivi partenaires</div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- ADHÉRENTS -->
+            <div>
+                <div class="index-section-title">🏢 Adhérents</div>
+                <div class="index-tiles">
+                    <a href="adherents/liste-membres.html" class="index-tile">
+                        <div class="index-tile-icon">📋</div>
+                        <div class="index-tile-name">Liste des membres</div>
+                        <div class="index-tile-desc">Annuaire des adhérents actifs et anciens adhérents</div>
+                    </a>
+                    <a href="adherents/liste-prospects.html" class="index-tile">
+                        <div class="index-tile-icon">🔍</div>
+                        <div class="index-tile-name">Liste des prospects</div>
+                        <div class="index-tile-desc">Entreprises en cours de qualification</div>
+                    </a>
+                    <a href="adherents/suivi-prospects.html" class="index-tile">
+                        <div class="index-tile-icon">🔄</div>
+                        <div class="index-tile-name">Suivi des prospects</div>
+                        <div class="index-tile-desc">Pipeline kanban — 5 étapes de qualification</div>
+                    </a>
+                    <a href="adherents/contacts.html" class="index-tile">
+                        <div class="index-tile-icon">👤</div>
+                        <div class="index-tile-name">Liste des contacts</div>
+                        <div class="index-tile-desc">Annuaire des personnes physiques rattachées aux membres et partenaires</div>
+                    </a>
+                    <a href="adherents/suivi-adhesions.html" class="index-tile">
+                        <div class="index-tile-icon">💳</div>
+                        <div class="index-tile-name">Suivi des adhésions</div>
+                        <div class="index-tile-desc">Cotisations, paiements, relances — année en cours et historique</div>
+                    </a>
+                    <a href="adherents/rgpd.html" class="index-tile">
+                        <div class="index-tile-icon">🔒</div>
+                        <div class="index-tile-name">RGPD</div>
+                        <div class="index-tile-desc">Suivi des consentements — Tous OK, Partiel, Aucun</div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- PARTENAIRES -->
+            <div>
+                <div class="index-section-title">🤝 Partenaires</div>
+                <div class="index-tiles">
+                    <a href="partenaires/liste-partenaires.html" class="index-tile">
+                        <div class="index-tile-icon">🏦</div>
+                        <div class="index-tile-name">Liste des partenaires</div>
+                        <div class="index-tile-desc">Annuaire partenaires actifs, prospects et anciens</div>
+                    </a>
+                    <a href="partenaires/suivi-partenariats.html" class="index-tile">
+                        <div class="index-tile-icon">📑</div>
+                        <div class="index-tile-name">Suivi des partenariats</div>
+                        <div class="index-tile-desc">Périodes de partenariat, paiements, échéances</div>
+                    </a>
+                    <a href="partenaires/suivi-prospects-partenaires.html" class="index-tile">
+                        <div class="index-tile-icon">🔄</div>
+                        <div class="index-tile-name">Suivi prospects partenaires</div>
+                        <div class="index-tile-desc">Pipeline kanban — qualification des prospects partenaires</div>
+                    </a>
+                    <a href="partenaires/echeances-proches.html" class="index-tile">
+                        <div class="index-tile-icon">⏰</div>
+                        <div class="index-tile-name">Échéances proches</div>
+                        <div class="index-tile-desc">Partenariats arrivant à échéance dans les 30 prochains jours</div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- OPÉRATIONS -->
+            <div>
+                <div class="index-section-title">⚙️ Opérations</div>
+                <div class="index-tiles">
+                    <a href="operations/todo-commercial.html" class="index-tile">
+                        <div class="index-tile-icon">✅</div>
+                        <div class="index-tile-name">TODO Commercial</div>
+                        <div class="index-tile-desc">Tâches commerciales — prospection adhérents, relances</div>
+                    </a>
+                    <a href="operations/todo-partenaire.html" class="index-tile">
+                        <div class="index-tile-icon">✅</div>
+                        <div class="index-tile-name">TODO Partenaire</div>
+                        <div class="index-tile-desc">Tâches partenaires — renouvellements, actions marketing</div>
+                    </a>
+                    <a href="operations/todo-admin.html" class="index-tile">
+                        <div class="index-tile-icon">✅</div>
+                        <div class="index-tile-name">TODO Admin</div>
+                        <div class="index-tile-desc">Tâches administratives — RGPD, documentation</div>
+                    </a>
+                    <a href="operations/logs.html" class="index-tile">
+                        <div class="index-tile-icon">📜</div>
+                        <div class="index-tile-name">Suivi des logs</div>
+                        <div class="index-tile-desc">Journal des automatisations Make — examen des entrées</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
