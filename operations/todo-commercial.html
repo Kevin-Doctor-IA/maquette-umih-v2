@@ -29,6 +29,7 @@
                 <a href="../partenaires/liste-partenaires.html" class="sidebar-item">Liste des partenaires</a>
                 <a href="../partenaires/suivi-partenariats.html" class="sidebar-item">Suivi des partenariats</a>
                 <a href="../partenaires/suivi-prospects-partenaires.html" class="sidebar-item">Suivi prospects partenaires</a>
+                <a href="../partenaires/contacts-partenaires.html" class="sidebar-item">Contacts partenaires</a>
                 <a href="../partenaires/echeances-proches.html" class="sidebar-item">Échéances proches</a>
             </div>
             <div class="sidebar-section">
@@ -71,6 +72,11 @@
                         <span class="exam-search-icon">🔍</span>
                         <input type="text" class="exam-search-input" id="exam-search" placeholder="Rechercher une tâche..." oninput="filterExamList(this.value)">
                     </div>
+                    <div class="list-tabs" style="padding:0 8px;">
+                        <button class="list-tab active" onclick="filterByStatus('pending', this)">À faire (4)</button>
+                        <button class="list-tab" onclick="filterByStatus('done', this)">Terminées (2)</button>
+                        <button class="list-tab" onclick="filterByStatus('all', this)">Toutes (6)</button>
+                    </div>
                     <div class="exam-list-scroll" id="exam-list-scroll">
                         <div class="exam-item exam-item-pending active" data-record-id="1" data-status="pending" onclick="selectExamItem(this)">
                             <div class="exam-item-icon">📄</div>
@@ -100,14 +106,14 @@
                                 <span class="badge badge-gray">À faire</span>
                             </div>
                         </div>
-                        <div class="exam-item exam-item-done" data-record-id="5" data-status="done" onclick="selectExamItem(this)">
+                        <div class="exam-item exam-item-done" data-record-id="5" data-status="done" style="display:none" onclick="selectExamItem(this)">
                             <div class="exam-item-icon">📄</div>
                             <div class="exam-item-content">
                                 <div class="exam-item-title">Relancer Hôtel Laminak pour cotisation 2026</div>
                                 <span class="badge badge-green">Terminé</span>
                             </div>
                         </div>
-                        <div class="exam-item exam-item-done" data-record-id="6" data-status="done" onclick="selectExamItem(this)">
+                        <div class="exam-item exam-item-done" data-record-id="6" data-status="done" style="display:none" onclick="selectExamItem(this)">
                             <div class="exam-item-icon">📄</div>
                             <div class="exam-item-content">
                                 <div class="exam-item-title">Contacter prospect Bar Hegoa (nouveau Pappers)</div>
@@ -222,7 +228,9 @@ function selectExamItem(item) { document.querySelectorAll('#exam-list-scroll .ex
 function updateExamDetail(item) { var recordId = item.getAttribute('data-record-id'); document.querySelectorAll('.exam-detail-block').forEach(function(block) { block.style.display = (block.getAttribute('data-record-id') === recordId) ? '' : 'none'; }); }
 function navigateExam(direction) { examItems = Array.from(document.querySelectorAll('#exam-list-scroll .exam-item')); if (examItems.length === 0) return; var newIndex = currentExamIndex + direction; if (newIndex < 0) newIndex = 0; if (newIndex >= examItems.length) newIndex = examItems.length - 1; selectExamItem(examItems[newIndex]); }
 function filterExamList(query) { var items = document.querySelectorAll('#exam-list-scroll .exam-item'); var lowerQuery = query.toLowerCase(); items.forEach(function(item) { var title = item.querySelector('.exam-item-title'); var text = title ? title.textContent.toLowerCase() : ''; item.style.display = text.indexOf(lowerQuery) !== -1 ? '' : 'none'; }); }
-document.addEventListener('DOMContentLoaded', function() { initExamItems(); });
+var currentStatusFilter = 'pending';
+function filterByStatus(status, btn) { currentStatusFilter = status; document.querySelectorAll('.list-tabs .list-tab').forEach(function(t) { t.classList.remove('active'); }); btn.classList.add('active'); var items = document.querySelectorAll('#exam-list-scroll .exam-item'); items.forEach(function(item) { var s = item.getAttribute('data-status'); item.style.display = (status === 'all' || s === status) ? '' : 'none'; }); var visible = document.querySelectorAll('#exam-list-scroll .exam-item[style=""], #exam-list-scroll .exam-item:not([style])'); if (visible.length > 0) selectExamItem(visible[0]); }
+document.addEventListener('DOMContentLoaded', function() { initExamItems(); filterByStatus('pending', document.querySelector('.list-tabs .list-tab')); });
 initExamItems();
 </script>
 </body>
